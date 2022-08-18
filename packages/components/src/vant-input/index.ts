@@ -1,0 +1,108 @@
+import { observer } from '@formily/reactive-vue'
+import { isVoidField } from '@formily/core'
+import { connect, mapProps, mapReadPretty, h, useField } from '@formily/vue'
+import { defineComponent } from 'vue'
+import type { FieldProps as VanInputProps } from 'vant'
+import { Field as VanInput, Cell } from 'vant'
+import { resolveComponent } from '../__builtins__/shared'
+import { stylePrefix } from '../__builtins__/configs'
+import { VantPreviewText } from '../vant-preview-text'
+
+export type InputProps = VanInputProps
+
+export const VantBaseInput = observer(
+  defineComponent({
+    name: 'FBaseInput',
+    props: {title: {}, readonly: {}},
+    setup(props, { attrs, slots, emit }) {
+
+      const FieldRef = useField()
+      return () => {
+        const field  = FieldRef.value
+        return  h(VanInput, {
+          class: [`${stylePrefix}-input`],
+          attrs: {
+            ...attrs,
+            ...props,
+            style: attrs.style,
+            modelValue: attrs.value,
+            // readonly: true,
+          },
+          on: emit,
+        }, slots)
+      }
+
+      }    
+  })
+)
+
+export const inputValidate = mapProps<any>(
+  { validateStatus: true, required: true },
+  (props, field) => {
+    if (isVoidField(field)) return props
+    if (!field) return props
+    const takeMessage = () => {
+      const split = (messages: any[]) => {
+        return messages.reduce((buf, text, index) => {
+          if (!text) return buf
+          return index < messages.length - 1
+            ? buf.concat([text, ', '])
+            : buf.concat([text])
+        }, [])
+      }
+
+      if (field.validating) return
+      if (props.feedbackText) return props.feedbackText
+      if (field.selfErrors.length) return split(field.selfErrors)
+      if (field.selfWarnings.length) return split(field.selfWarnings)
+      if (field.selfSuccesses.length) return split(field.selfSuccesses)
+    }
+    const errorMessages = takeMessage()
+    return {
+      errorMessage: resolveComponent(
+        Array.isArray(errorMessages) ? errorMessages.join('') : errorMessages
+      ),
+      extra: props.extra || field.description,
+    }
+  },
+  (props, field) => {
+    if (isVoidField(field)) return props
+    if (!field) return props
+    return {
+      feedbackStatus:
+        field.validateStatus === 'validating'
+          ? 'pending'
+          : (Array.isArray(field.decorator) &&
+              field.decorator[1]?.feedbackStatus) ||
+            field.validateStatus,
+    }
+  },
+  (props, field) => {
+    if (isVoidField(field)) return props
+
+    if (!field) return props
+    let asterisk = false
+    if (field.required && field.pattern !== 'readPretty') {
+      asterisk = true
+    }
+    if ('asterisk' in props) {
+      asterisk = props.asterisk
+    }
+
+    return {
+      asterisk,
+    }
+  }
+)
+
+export const VantInput = connect(
+  VantBaseInput,
+  mapProps({
+    readOnly: true,
+  }),
+  mapReadPretty(VantPreviewText.VantInput)
+  // inputValidate
+)
+console.log(VantInput, "VantInput")
+
+export default VantInput
