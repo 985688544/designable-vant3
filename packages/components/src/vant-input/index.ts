@@ -8,7 +8,7 @@ import { resolveComponent } from '../__builtins__/shared'
 import { stylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
 
-export type InputProps = VanInputProps
+export type vantInputProps = VanInputProps
 
 export const VantBaseInput = observer(
   defineComponent({
@@ -103,6 +103,5 @@ export const VantInput = connect(
   mapReadPretty(VantPreviewText.VantInput)
   // inputValidate
 )
-console.log(VantInput, "VantInput")
 
 export default VantInput
