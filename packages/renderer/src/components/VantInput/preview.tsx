@@ -22,7 +22,7 @@ const Field = defineComponent({
     return () => {
       return (
         <div>
-          <FormilyVantInput {...attrs} {...props}>
+          <FormilyVantInput readonly={true} {...attrs} {...props}>
             {slots.default?.()}
           </FormilyVantInput>
         </div>

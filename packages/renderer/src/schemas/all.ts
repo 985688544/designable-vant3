@@ -29,3 +29,4 @@ export * from './ArrayTable'
 export * from './ArrayCards'
 
 export * from './VantInput'
+export * from './VantCheckbox'

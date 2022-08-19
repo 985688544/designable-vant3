@@ -30,3 +30,4 @@ export * from './FormLayout'
 
 export * from './VantInput'
 export * from './VantCalendar'
+export * from './VantCheckbox'

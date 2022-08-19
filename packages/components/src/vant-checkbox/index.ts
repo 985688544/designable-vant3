@@ -1,15 +1,18 @@
+import { PropType } from 'vue-demi';
+
 import { connect, mapProps, h, mapReadPretty } from '@formily/vue'
 import { defineComponent } from 'vue'
 import {
   composeExport,
   transformComponent,
   resolveComponent,
+  SlotTypes,
 } from '../__builtins__/shared'
 import {
   Checkbox as VanCheckbox,
   CheckboxGroup as VanCheckboxGroup,
 } from 'vant'
-import { VantPreviewText } from '../vant-preview-text'
+import { PreviewText } from '../preview-text'
 
 const TransformVanCheckbox = transformComponent(VanCheckbox, {
   change: 'update:modelValue',
@@ -26,14 +29,16 @@ const CheckboxOption = defineComponent({
   },
   setup(customProps: any, { attrs, slots, emit }) {
     return () => {
-      const props = attrs as any
+      const props = attrs as any 
       const option = customProps?.option
+
       if (option) {
         const children = {
           default: () => [
             resolveComponent(slots.default ?? option.label, { option }),
           ],
         }
+        // console.log(children, "childrenn")
         const newProps = {} as any
         Object.assign(newProps, option)
         newProps.label = option.value
@@ -77,6 +82,10 @@ const CheckboxGroupOption = defineComponent({
       type: Array,
       default: () => [],
     },
+    optionType: {
+      type: String,
+      default: 'default', 
+    }
   },
   setup(customProps: any, { attrs, slots, emit }: any) {
     return () => {
@@ -88,7 +97,7 @@ const CheckboxGroupOption = defineComponent({
                 options.map((option: any) => {
                   if (typeof option === 'string') {
                     return h(
-                      Checkbox,
+                      VanCheckbox,
                       {
                         props: {
                           option: {
@@ -103,7 +112,7 @@ const CheckboxGroupOption = defineComponent({
                     )
                   } else {
                     return h(
-                      Checkbox,
+                      VantCheckbox,
                       {
                         props: {
                           option,
@@ -134,7 +143,7 @@ const CheckboxGroupOption = defineComponent({
 const CheckboxGroup = connect(
   CheckboxGroupOption,
   mapProps({ dataSource: 'options', value: 'modelValue' }),
-  mapReadPretty(VantPreviewText.Checkbox, {
+  mapReadPretty(PreviewText.Checkbox, {
     multiple: true,
   })
 )

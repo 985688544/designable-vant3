@@ -128,8 +128,10 @@ import {
   Rate,
   VantInput,
   VantCalendar,
+  VantCheckbox,
 } from '@formily/element-plus-renderer'
 
+console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
 import { SettingsForm } from '@formily/element-plus-settings-form'
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -213,6 +215,7 @@ export default defineComponent({
         Rate,
         VantInput,
         VantCalendar,
+        VantCheckbox,
       },
       sources: {
         Inputs: [
@@ -225,7 +228,7 @@ export default defineComponent({
           // TreeSelect,
           // Cascader,
           // Transfer,
-          // Checkbox,
+          Checkbox,
           // Radio,
           // DatePicker,
           // TimePicker,
@@ -234,7 +237,7 @@ export default defineComponent({
           // ObjectContainer,
         ],
         Profession: [MyCard],
-        VantComponents: [VantInput, VantCalendar],
+        VantComponents: [VantInput, VantCalendar, VantCheckbox],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
         // Layouts: [Card, Space, FormGrid, FormLayout, FormTab, FormCollapse],

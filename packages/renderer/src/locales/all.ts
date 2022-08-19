@@ -32,3 +32,4 @@ export * from './FormCollapse'
 export * from './FormGrid'
 
 export * from './VantInput'
+export * from './VantCheckbox'
