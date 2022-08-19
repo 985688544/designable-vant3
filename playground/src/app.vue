@@ -130,6 +130,7 @@ import {
   VantCalendar,
   VantCheckbox,
   VantPicker,
+  VantFormLayout,
 } from '@formily/element-plus-renderer'
 
 console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
@@ -218,6 +219,7 @@ export default defineComponent({
         VantCalendar,
         VantCheckbox,
         VantPicker,
+        VantFormLayout,
       },
       sources: {
         Inputs: [
@@ -239,7 +241,13 @@ export default defineComponent({
           // ObjectContainer,
         ],
         Profession: [MyCard],
-        VantComponents: [VantInput, VantCalendar, VantCheckbox, VantPicker],
+        VantComponents: [
+          VantInput,
+          VantCalendar,
+          VantCheckbox,
+          VantPicker,
+          VantFormLayout,
+        ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
         // Layouts: [Card, Space, FormGrid, FormLayout, FormTab, FormCollapse],
