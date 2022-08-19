@@ -131,6 +131,7 @@ import {
   VantCheckbox,
   VantPicker,
   VantFormLayout,
+  VantForm,
 } from '@formily/element-plus-renderer'
 
 console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
@@ -220,6 +221,7 @@ export default defineComponent({
         VantCheckbox,
         VantPicker,
         VantFormLayout,
+        VantForm,
       },
       sources: {
         Inputs: [
@@ -247,6 +249,7 @@ export default defineComponent({
           VantCheckbox,
           VantPicker,
           VantFormLayout,
+          VantForm,
         ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
