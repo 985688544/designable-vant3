@@ -16,9 +16,9 @@ import { observable, observe } from '@formily/reactive'
 
 const Field = defineComponent({
   name: 'VantInput',
-  props: { title: {} },
+  props: { title: {}, readonly: {} },
   setup(props: ISchema, { slots, attrs }) {
-    // console.log(props, 'props11111')
+    console.log(props, 'props11111')
     return () => {
       return (
         <div>
@@ -55,11 +55,9 @@ export const VantInput: DnFC<VNode> = composeExport(Field, {
           type: 'string',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantInput',
-          // format:
-          // uniqueItems
           'x-component-props': {
+            readonly: true,
             title: 'Title',
-            colon: true,
           },
         },
       },

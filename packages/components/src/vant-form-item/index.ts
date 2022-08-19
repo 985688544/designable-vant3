@@ -12,8 +12,8 @@ export type VantFormItemProps = VanFormItemProps
 export const VantBaseFormItem = observer(
   defineComponent({
     name: 'FBaseFormItem',
-    setup(props, { attrs, slots, emit }) {
-      console.log(attrs, "attrs")
+    setup(props, { attrs, slots, emit }) 
+    {
       return () => {
         return h(
           VanFormItem,
@@ -21,6 +21,8 @@ export const VantBaseFormItem = observer(
             class: [
               // { [`${stylePrefix}-input-asterisk`]: attrs.asterisk },
             ],
+            ...props,
+            readonly: true,
             attrs,
             on: emit,
           },

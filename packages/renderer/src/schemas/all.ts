@@ -30,3 +30,4 @@ export * from './ArrayCards'
 
 export * from './VantInput'
 export * from './VantCheckbox'
+export * from './VantPicker'

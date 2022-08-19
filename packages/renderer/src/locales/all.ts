@@ -33,3 +33,4 @@ export * from './FormGrid'
 
 export * from './VantInput'
 export * from './VantCheckbox'
+export * from './VantPicker'
