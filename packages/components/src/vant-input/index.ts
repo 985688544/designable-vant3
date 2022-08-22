@@ -8,22 +8,25 @@ import { resolveComponent } from '../__builtins__/shared'
 import { stylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
 
+
 export type vantInputProps = VanInputProps
 
 export const VantBaseInput = observer(
   defineComponent({
     name: 'FBaseInput',
-    props: {title: {}, readonly: {}},
-    setup(props, { attrs, slots, emit }) {
+    props: { title: {} },
 
-      const FieldRef = useField()
+    setup(props, { attrs, slots, emit }) {
+      // console.log(attrs, " filed==>attrs")
+      // const FieldRef = useField()
       return () => {
-        const field  = FieldRef.value
+        // const field  = FieldRef.value
         return  h(VanInput, {
           class: [`${stylePrefix}-input`],
           attrs: {
             ...attrs,
             ...props,
+            label:props.title,
             style: attrs.style,
             modelValue: attrs.value,
             // readonly: true,
@@ -31,7 +34,6 @@ export const VantBaseInput = observer(
           on: emit,
         }, slots)
       }
-
       }    
   })
 )
@@ -98,7 +100,7 @@ export const inputValidate = mapProps<any>(
 export const VantInput = connect(
   VantBaseInput,
   mapProps({
-    readOnly: true,
+    readOnly: 'readonly',
   }),
   mapReadPretty(VantPreviewText.VantInput)
   // inputValidate

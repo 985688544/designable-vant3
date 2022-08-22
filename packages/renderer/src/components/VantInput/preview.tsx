@@ -18,14 +18,11 @@ const Field = defineComponent({
   name: 'VantInput',
   props: { title: {}, readonly: {} },
   setup(props: ISchema, { slots, attrs }) {
-    console.log(props, 'props11111')
     return () => {
       return (
-        <div>
-          <FormilyVantInput readonly={true} {...attrs} {...props}>
-            {slots.default?.()}
-          </FormilyVantInput>
-        </div>
+        <FormilyVantInput readonly={true} {...attrs} {...props}>
+          {slots.default?.()}
+        </FormilyVantInput>
       )
     }
   },
@@ -56,7 +53,7 @@ export const VantInput: DnFC<VNode> = composeExport(Field, {
           'x-decorator': 'VantFormItem',
           'x-component': 'VantInput',
           'x-component-props': {
-            readonly: true,
+            // readonly: true,
             title: 'Title',
           },
         },
