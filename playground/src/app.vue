@@ -132,9 +132,10 @@ import {
   VantPicker,
   VantFormLayout,
   VantForm,
+  VantDatetimePicker,
 } from '@formily/element-plus-renderer'
 
-console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
+console.log(VantDatetimePicker, 'VantDatetimePicker')
 import { SettingsForm } from '@formily/element-plus-settings-form'
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -222,6 +223,7 @@ export default defineComponent({
         VantPicker,
         VantFormLayout,
         VantForm,
+        VantDatetimePicker,
       },
       sources: {
         Inputs: [
@@ -250,6 +252,7 @@ export default defineComponent({
           VantPicker,
           VantFormLayout,
           VantForm,
+          VantDatetimePicker,
         ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
