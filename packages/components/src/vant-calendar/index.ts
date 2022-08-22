@@ -17,7 +17,8 @@ const BaseCalendar = observer(
       } = attrs as any
       const { format } = formItemProps
       const show = ref(false)
-
+      console.log(props, "props")
+      console.log(attrs, "attrsattrs")
       return () => {
         return h(
           'div',
@@ -27,8 +28,9 @@ const BaseCalendar = observer(
               h(
                 VantFormItem,
                 {
+                  label: attrs.label,
                   attrs: {
-                    modelValue: format ? format(attrs.value) : attrs.value,
+                    modelValue: format ? format(attrs.value) : attrs.value, 
                     ...formItemProps,
                   },
                   on: {
@@ -43,6 +45,7 @@ const BaseCalendar = observer(
               h(
                 VanCalendar,
                 {
+                  teleport: 'body',
                   attrs: {
                     show: show.value,
                     ...calendarProps,
@@ -52,7 +55,8 @@ const BaseCalendar = observer(
                       show.value = false
                     },
                     confirm: (val: any) => {
-                      emit('change', val)
+                      const formatDate = (date) => `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+                      emit('change', formatDate(val))
                       show.value = false
                     },
                   },

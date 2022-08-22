@@ -39,8 +39,11 @@ module.exports = defineConfig({
       )
     )
     config.resolve.alias.set(
-      '@formily/vant3-renderer',
-      path.resolve(__dirname, '../node_modules/@formily/vant3-renderer/src')
+      '@formily/element-plus-renderer',
+      path.resolve(
+        __dirname,
+        '../node_modules/@formily/element-plus-renderer/src'
+      )
     )
     config.resolve.alias.set(
       '@formily/element-plus-setters',

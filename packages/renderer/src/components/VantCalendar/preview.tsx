@@ -14,9 +14,9 @@ export const VantCalendar = composeExport(FormilyVantCalendar, {
       return node.props?.['x-component'] === 'VantCalendar'
     },
     designerProps: {
-      // propsSchema: createFieldSchema(AllSchemas.Input),
+      propsSchema: createFieldSchema(AllSchemas.VantCalendar),
     },
-    // designerLocales: AllLocales.Input,
+    designerLocales: AllLocales.VantCalendar,
   }),
   Resource: createResource({
     title: 'vant-calendar',
@@ -27,6 +27,9 @@ export const VantCalendar = composeExport(FormilyVantCalendar, {
           type: 'string',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantCalendar',
+          'x-component-props': {
+            label: '日历',
+          },
         },
       },
     ],
