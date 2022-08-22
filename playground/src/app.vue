@@ -132,9 +132,11 @@ import {
   VantPicker,
   VantFormLayout,
   VantForm,
+  VantRadio,
 } from '@formily/element-plus-renderer'
 
 console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
+console.log(VantRadio, 'vantRadio')
 import { SettingsForm } from '@formily/element-plus-settings-form'
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -185,6 +187,7 @@ export default defineComponent({
       shortcuts: [],
       rootComponentName: 'Form',
     })
+    console.log('Input', Input)
     return {
       engine,
       components: {
@@ -222,6 +225,7 @@ export default defineComponent({
         VantPicker,
         VantFormLayout,
         VantForm,
+        VantRadio,
       },
       sources: {
         Inputs: [
@@ -250,6 +254,7 @@ export default defineComponent({
           VantPicker,
           VantFormLayout,
           VantForm,
+          VantRadio,
         ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
