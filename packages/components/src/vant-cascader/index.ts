@@ -2,8 +2,8 @@ import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { ref, defineComponent } from 'vue'
 import { Cascader as VanCascader, Popup as VanPopup } from 'vant'
-import FormItem from '../form-item'
-import { PreviewText } from '../preview-text'
+import FormItem from '../vant-form-item'
+import { VantPreviewText } from '../vant-preview-text'
 
 const BaseCascader = observer(
   defineComponent({
@@ -91,7 +91,7 @@ const BaseCascader = observer(
 export const VantCascader = connect(
   BaseCascader,
   mapProps({ readOnly: 'readonly' }),
-  mapReadPretty(PreviewText.Cascader)
+  mapReadPretty(VantPreviewText.Cascader)
 )
 
 export default VantCascader

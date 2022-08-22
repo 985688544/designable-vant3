@@ -133,6 +133,7 @@ import {
   VantFormLayout,
   VantForm,
   VantDatetimePicker,
+  VantCascader,
 } from '@formily/element-plus-renderer'
 
 console.log(VantDatetimePicker, 'VantDatetimePicker')
@@ -224,6 +225,7 @@ export default defineComponent({
         VantFormLayout,
         VantForm,
         VantDatetimePicker,
+        VantCascader,
       },
       sources: {
         Inputs: [
@@ -253,6 +255,7 @@ export default defineComponent({
           VantFormLayout,
           VantForm,
           VantDatetimePicker,
+          VantCascader,
         ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
