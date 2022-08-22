@@ -137,6 +137,7 @@ import {
   VantSwitch,
   VantRate,
   VantSlider,
+  VantStepper,
 } from '@formily/element-plus-renderer'
 
 console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
@@ -234,6 +235,7 @@ export default defineComponent({
         VantSwitch,
         VantRate,
         VantSlider,
+        VantStepper,
       },
       sources: {
         Inputs: [
@@ -267,6 +269,7 @@ export default defineComponent({
           VantSwitch,
           VantRate,
           VantSlider,
+          VantStepper,
         ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],
