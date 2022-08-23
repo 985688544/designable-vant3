@@ -5,6 +5,7 @@ import { DatetimePicker as VanDatetimePicker, Popup as VanPopup } from 'vant'
 // Field as VanFormItem
 import VantFormItem from '../vant-form-item'
 import { PreviewText } from '../preview-text'
+import { vantStylePrefix } from '../__builtins__/configs'
 
 const BaseDatetimePicker = observer(
   defineComponent({
@@ -29,6 +30,7 @@ const BaseDatetimePicker = observer(
               h(
                 VantFormItem,
                 {
+                  class: [`${vantStylePrefix}-Datetime-picker`],
                   label: attrs.label,
                   attrs: {
                     modelValue: attrs.value,
