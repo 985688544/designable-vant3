@@ -24,26 +24,26 @@ const BasePicker = observer(
         pickerListeners,
       } = props as any
 
-      console.log(formItemProps, "formItemProps")
+      console.log(attrs, "attrsattrs")
+
       const show = ref(false)
 
       return () => {
         return h(
-          Cell,
+          'div',
           {},
           {
             default: () => [
               h(
                 VantFormItem,
                 {
+                  label: attrs.label,
                   attrs: {
-                    modelValue: attrs.value,  
-                    readonly:true,           
+                    modelValue: attrs.value,          
                     ...formItemProps,   
                   },
                   on: {
                     click: () => {
-                      // if(formItemProps.readonly) return
                         show.value = true  
                     },
                   },

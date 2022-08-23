@@ -41,6 +41,7 @@ export const VantDatetimePicker = composeExport(PickerFile, {
           'x-decorator': 'VantFormItem',
           'x-component': 'VantDatetimePicker',
           'x-component-props': {
+            label: '时间选择器',
             // textContent: '上传',
           },
         },

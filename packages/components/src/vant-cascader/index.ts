@@ -29,6 +29,7 @@ const BaseCascader = observer(
                 FormItem,
                 {
                   attrs: {
+                    label: '级联选择器',
                     modelValue: format ? format(attrs.value) : attrs.value,
                     ...formItemProps,
                   },
@@ -43,6 +44,7 @@ const BaseCascader = observer(
               h(
                 VanPopup,
                 {
+                  teleport: 'body',
                   attrs: {
                     show: show.value,
                     round: true,
@@ -68,8 +70,14 @@ const BaseCascader = observer(
                           close: () => {
                             show.value = false
                           },
-                          finish: (val: any) => {
-                            emit('change', val)
+                          finish: ({selectedOptions}: any) => {
+
+                            // const { options }  = cascaderProps
+
+                            const fieldVal =  selectedOptions.map((option) => option.text).join('/');
+                            
+
+                            emit('change', fieldVal)
                             show.value = false
                           },
                           ...cascaderListeners,

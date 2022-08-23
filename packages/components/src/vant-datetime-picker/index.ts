@@ -29,6 +29,7 @@ const BaseDatetimePicker = observer(
               h(
                 VantFormItem,
                 {
+                  label: attrs.label,
                   attrs: {
                     modelValue: attrs.value,
                     ...formItemProps,

@@ -25,13 +25,11 @@ export const VantCascader: DnFC<VNode> = composeExport(FormilyVantCascader, {
       {
         componentName: 'Field',
         props: {
-          type: 'number',
-          //   title: 'VantCascader',
+          type: 'string',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantCascader',
           'x-component-props': {
             cascaderProps: {
-              teleport: 'body',
               options: [
                 {
                   text: '浙江省',
