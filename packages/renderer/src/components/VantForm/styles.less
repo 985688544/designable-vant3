@@ -1,6 +1,16 @@
 @import '../../styles.less';
 
 .dn-designable-form {
+  .@{formily-vant}-Calendar,
+  .@{formily-vant}-input,
+  .@{formily-vant}-Checkbox
+  {
+    pointer-events: none !important;
+    // input {
+    //   pointer-events: none !important;
+    // }
+  }
+
   .@{element-prefix}-input,
   .@{element-prefix}-input-number,
   .@{element-prefix}-input-affix-wrapper,

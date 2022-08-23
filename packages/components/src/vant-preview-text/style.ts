@@ -1,3 +1,3 @@
 // 依赖
-import '../input/style'
-import './style.less'
+import '../van-input/style'
+import './style.scss'

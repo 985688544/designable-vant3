@@ -1,12 +1,5 @@
 @import '../__builtins__/styles/common.scss';
 
-.#{$formily-prefix-vant}-input {
-    padding: 0 !important;
-    input {
-    pointer-events: none;
-
-    }
-}
 
 .#{$formily-prefix-vant}-input-asterisk::before {
     position: absolute;

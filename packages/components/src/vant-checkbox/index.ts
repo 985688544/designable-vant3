@@ -14,6 +14,7 @@ import {
 } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
 import VantFormItem from '../vant-form-item'
+import { vantStylePrefix } from '../__builtins__/configs';
 
 
 const TransformVanCheckbox = transformComponent(VanCheckbox, {
@@ -49,6 +50,7 @@ const CheckboxOption = defineComponent({
         return h(
           VanCheckbox,
           {
+            class: [`${vantStylePrefix}-Checkbox`],
             shape: 'square',
             attrs: {
               ...newProps,
