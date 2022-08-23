@@ -33,7 +33,7 @@ export default defineComponent({
   name: 'PreviewWidget',
   props: ['tree'],
   setup(props) {
-    console.log('预览模式下拿到整颗树Tree', props.tree)
+    // console.log('预览模式下拿到整颗树Tree', props.tree)
     const formRef = shallowRef<IForm>(createForm())
     const treeSchemaRef = computed(() => {
       return transformToSchema(props.tree)

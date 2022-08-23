@@ -44,11 +44,11 @@ const ArrayCardsInner = observer(
     setup(props, { attrs }) {
       // 自定义组件内读取当前字段属性，操作字段状态等
       const fieldRef = useField<ArrayField>()
-      console.log(fieldRef, "fieldRef")
+      // console.log(fieldRef, "fieldRef")
 
       // 自定义组件中读取当前字段的 Schema 信息
       const schemaRef = useFieldSchema()
-      console.log(schemaRef, "schemaRef")
+      // console.log(schemaRef, "schemaRef")
 
       // 样式前缀
       const prefixCls = `${stylePrefix}-array-cards`
@@ -60,7 +60,7 @@ const ArrayCardsInner = observer(
         const field = fieldRef.value
         // schema的值
         const schema = schemaRef.value
-        console.log(schema, "schema")
+        // console.log(schema, "schema")
         // 绑定的初始数据结构
         const dataSource = Array.isArray(field.value) ? field.value : []
 

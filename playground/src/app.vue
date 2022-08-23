@@ -136,7 +136,6 @@ import {
   VantCascader,
 } from '@formily/element-plus-renderer'
 
-console.log(VantDatetimePicker, 'VantDatetimePicker')
 import { SettingsForm } from '@formily/element-plus-settings-form'
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {

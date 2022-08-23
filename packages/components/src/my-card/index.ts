@@ -30,8 +30,8 @@ const MyCardOption = defineComponent({
         setup() {
             const FieldRef = useField()
             const SchemaRef = useFieldSchema()
-            console.log(FieldRef, "FieldRef")
-            console.log(SchemaRef, "SchemaRef")
+            // console.log(FieldRef, "FieldRef")
+            // console.log(SchemaRef, "SchemaRef")
 
             return () => {
                 return h('div', {}, 'ttttt')

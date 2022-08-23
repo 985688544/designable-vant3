@@ -1,4 +1,4 @@
-import { PropType } from 'vue-demi';
+import { PropType } from 'vue-demi'
 
 import { connect, mapProps, h, mapReadPretty } from '@formily/vue'
 import { defineComponent } from 'vue'
@@ -14,8 +14,7 @@ import {
 } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
 import VantFormItem from '../vant-form-item'
-import { vantStylePrefix } from '../__builtins__/configs';
-
+import { vantStylePrefix } from '../__builtins__/configs'
 
 const TransformVanCheckbox = transformComponent(VanCheckbox, {
   change: 'update:modelValue',
@@ -32,7 +31,7 @@ const CheckboxOption = defineComponent({
   },
   setup(customProps: any, { attrs, slots, emit }) {
     return () => {
-      const props = attrs as any 
+      const props = attrs as any
       const option = customProps?.option
 
       if (option) {
@@ -41,7 +40,7 @@ const CheckboxOption = defineComponent({
             resolveComponent(slots.default ?? option.label, { option }),
           ],
         }
-      
+
         const newProps = {} as any
         Object.assign(newProps, option)
         newProps.label = option.value
@@ -61,21 +60,23 @@ const CheckboxOption = defineComponent({
       }
       return h(
         VantFormItem,
+        {},
         {
-        
-        },
-        { default: ()=>[
-          h(
-            TransformVanCheckbox, { 
-              attrs: {
-                ...props
-              },    
-              on: emit
-            }, {
-              default: () => [props.label]
-            }
-          )
-        ]}
+          default: () => [
+            h(
+              TransformVanCheckbox,
+              {
+                attrs: {
+                  ...props,
+                },
+                on: emit,
+              },
+              {
+                default: () => [props.label],
+              }
+            ),
+          ],
+        }
       )
     }
   },
@@ -94,12 +95,12 @@ const CheckboxGroupOption = defineComponent({
     },
     optionType: {
       type: String,
-      default: 'horizontal', 
+      default: 'horizontal',
     },
     direction: {
       type: String,
-      default: 'default', 
-    }
+      default: 'default',
+    },
   },
   setup(customProps: any, { attrs, slots, emit }: any) {
     return () => {
@@ -113,9 +114,7 @@ const CheckboxGroupOption = defineComponent({
                     return h(
                       VanCheckbox,
                       {
-                    
                         props: {
-                      
                           option: {
                             label: option,
                             name: option,
@@ -130,7 +129,7 @@ const CheckboxGroupOption = defineComponent({
                     return h(
                       VantCheckbox,
                       {
-                        props: {                
+                        props: {
                           option,
                         },
                       },
@@ -142,23 +141,27 @@ const CheckboxGroupOption = defineComponent({
                 }),
             }
           : slots
-      return h(VantFormItem, {
-        label: '默认',
-      }, {
-        default: () => [
-          h(
-            TransformVanCheckboxGroup,
-            {
-              direction: 'horizontal',
-              attrs: { 
-                ...attrs,
+      return h(
+        VantFormItem,
+        {
+          label: '默认',
+        },
+        {
+          default: () => [
+            h(
+              TransformVanCheckboxGroup,
+              {
+                direction: 'horizontal',
+                attrs: {
+                  ...attrs,
+                },
+                on: emit,
               },
-              on: emit,
-            },
-            children
-          )
-        ]
-      })
+              children
+            ),
+          ],
+        }
+      )
     }
   },
 })

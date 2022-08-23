@@ -18,8 +18,8 @@ const BaseCalendar = observer(
       } = attrs as any
       const { format } = formItemProps
       const show = ref(false)
-      console.log(props, "props")
-      console.log(attrs, "attrsattrs")
+      // console.log(props, "props")
+      // console.log(attrs, "attrsattrs")
       return () => {
         return h(
           'div',

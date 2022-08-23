@@ -25,7 +25,7 @@ const BasePicker = observer(
         pickerListeners,
       } = props as any
 
-      console.log(attrs, "attrsattrs")
+      // console.log(attrs, "attrsattrs")
 
       const show = ref(false)
 

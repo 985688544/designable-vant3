@@ -36,7 +36,6 @@ const Input = defineComponent({
   name: 'FPreviewTextInput',
   props: ['value'],
   setup(props, { attrs, slots }) {
-    console.log(props, "!221")
     const value = toRef(props, 'value')
     const placeholder = usePlaceholder(value)
     return () => {
