@@ -11,7 +11,6 @@ export const VantDatetimePicker = composeExport(FormilyVantDateTimePicker, {
     name: 'DnVantDatetimePicker',
     extends: ['Field'], // 匹配
     selector: (node) => {
-      console.log(node.props, '222')
       return node.props?.['x-component'] === 'VantDatetimePicker'
     },
     designerProps: {
@@ -20,7 +19,7 @@ export const VantDatetimePicker = composeExport(FormilyVantDateTimePicker, {
     designerLocales: AllLocales.VantDateTimePicker,
   }),
   Resource: createResource({
-    title: 'datetimePicker',
+    // title: 'datetimePicker',
     elements: [
       {
         componentName: 'Field',

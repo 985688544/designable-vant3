@@ -19,8 +19,8 @@ export const VantCascader: DnFC<VNode> = composeExport(FormilyVantCascader, {
     designerLocales: AllLocales.VantCascader,
   }),
   Resource: createResource({
-    icon: 'VantCascader',
-    title: 'VantCascader',
+    // icon: 'VantCascader',
+    // title: 'VantCascader',
     elements: [
       {
         componentName: 'Field',

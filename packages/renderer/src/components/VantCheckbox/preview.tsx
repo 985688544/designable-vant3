@@ -21,8 +21,8 @@ export const VantCheckbox: DnFC<VNode> = composeExport(FormilyVantCheckbox, {
     designerLocales: AllLocales.VantCheckboxGroup,
   }),
   Resource: createResource({
-    icon: 'CheckboxGroupSource',
-    title: 'vant-Checkbox',
+    // icon: 'CheckboxGroupSource',
+    // title: 'vant-Checkbox',
     elements: [
       {
         componentName: 'Field',

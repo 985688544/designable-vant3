@@ -19,8 +19,8 @@ export const VantPicker: DnFC<VNode> = composeExport(FormilyVantPicker, {
     designerLocales: AllLocales.VantPicker,
   }),
   Resource: createResource({
-    icon: '',
-    title: 'Filed-Picker',
+    // icon: '',
+    // title: 'Filed-Picker',
     elements: [
       {
         componentName: 'Field',

@@ -75,8 +75,8 @@ export const VantForm: DnFC<Vue.Component<
   }),
   Resource: createResource({
     // title: { 'zh-CN': 'Form', 'en-US': 'Form' },
-    title: 'Vant-Form',
-    icon: 'FormLayoutSource',
+    // title: 'Vant-Form',
+    // icon: 'FormLayoutSource',
     elements: [
       {
         componentName: 'Field',
