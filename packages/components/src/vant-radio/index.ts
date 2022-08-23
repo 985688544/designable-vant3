@@ -1,5 +1,5 @@
-import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { defineComponent, PropType } from 'vue'
+import { connect, mapProps, mapReadPretty } from '@formily/vue'
+import { defineComponent, PropType, h } from 'vue'
 import {
   composeExport,
   transformComponent,

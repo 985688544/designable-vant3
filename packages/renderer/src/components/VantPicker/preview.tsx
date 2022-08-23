@@ -58,8 +58,12 @@ export const VantPicker: DnFC<VNode> = composeExport(Picker, {
           'x-decorator': 'VantFormItem',
           'x-component': 'VantPicker',
           'x-component-props': {
+            label: '选择器',
             pickerProps: {
-              columns: ['3333', '112', '111'],
+              formItemProps: {
+                label: '选择器',
+              },
+              columns: ['事业一部', '事业二部', '事业三部'],
             },
           },
         },

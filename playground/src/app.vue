@@ -138,10 +138,14 @@ import {
   VantRate,
   VantSlider,
   VantStepper,
+  VantDatetimePicker,
+  VantCascader,
 } from '@formily/element-plus-renderer'
 
 console.log(Checkbox, 'vantCheckboxGroupvantCheckboxGroup')
 console.log(VantRadio, 'vantRadio')
+console.log(VantDatetimePicker, 'VantDatetimePicker')
+
 import { SettingsForm } from '@formily/element-plus-settings-form'
 GlobalRegistry.registerDesignerLocales({
   'zh-CN': {
@@ -236,6 +240,8 @@ export default defineComponent({
         VantRate,
         VantSlider,
         VantStepper,
+        VantDatetimePicker,
+        VantCascader,
       },
       sources: {
         Inputs: [
@@ -270,6 +276,8 @@ export default defineComponent({
           VantRate,
           VantSlider,
           VantStepper,
+          VantDatetimePicker,
+          VantCascader,
         ],
         Arrays: [ArrayCards, ArrayTable],
         // Displays: [Text],

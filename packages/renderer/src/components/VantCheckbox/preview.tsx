@@ -28,9 +28,14 @@ export const VantCheckbox: DnFC<VNode> = composeExport(FormilyVantCheckbox, {
           type: 'array' || 'Array<string | number>',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantCheckbox.Group',
+          'x-component-props': {
+            direction: 'horizontal',
+          },
           enum: [
             { label: '单位一', name: 1 },
             { label: '单位二', name: 2 },
+            { label: '单位三', name: 3, disabled: true },
+            { label: '单位四', name: 4 },
           ],
         },
       },

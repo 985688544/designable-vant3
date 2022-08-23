@@ -14,29 +14,34 @@ export const VantCheckbox: ISchema & { Group?: ISchema } = {
 VantCheckbox.Group = {
   type: 'object',
   properties: {
-    optionType: {
+    label: {
       type: 'string',
-      enum: ['default', 'button'],
-      'x-decorator': 'FormItem',
+      default: '复选框组',
+      'x-decorator': 'VantFormItem',
+      'x-component': 'Input',
+    },
+    direction: {
+      type: 'string',
+      enum: ['horizontal', 'vertical'],
+      'x-decorator': 'VantFormItem',
       'x-component': 'Radio.Group',
       'x-component-props': {
-        
-        optionType: 'button',
+        direction: 'horizontal',
       },
     },
-    size: {
-      default: 'default',
-      type: 'string',
-      enum: ['large', 'default', 'small', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      'x-component-props': {
+    // size: {
+    //   default: 'default',
+    //   type: 'string',
+    //   enum: ['large', 'default', 'small', null],
+    //   'x-decorator': 'VantFormItem',
+    //   'x-component': 'Select',
+    //   'x-component-props': {
         
-      },
-      'x-reactions': (field) => {
-        field.visible =
-          field.form?.values?.['x-component-props']?.optionType === 'button'
-      },
-    },
+    //   },
+    //   'x-reactions': (field) => {
+    //     field.visible =
+    //       field.form?.values?.['x-component-props']?.optionType === 'horizontal'
+    //   },
+    // },
   },
 }

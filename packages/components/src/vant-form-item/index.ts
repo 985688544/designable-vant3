@@ -15,14 +15,15 @@ export const VantBaseFormItem = observer(
     setup(props, { attrs, slots, emit }) 
     {
       return () => {
+    console.log(slots.default, "!222")
+
         return h(
           VanFormItem,
           {
             class: [
-              // { [`${stylePrefix}-input-asterisk`]: attrs.asterisk },
+              { [`${stylePrefix}-input-asterisk`]: attrs.asterisk },
             ],
             ...props,
-            readonly: true,
             attrs,
             on: emit,
           },

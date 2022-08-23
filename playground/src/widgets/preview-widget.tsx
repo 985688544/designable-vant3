@@ -5,31 +5,27 @@ import * as ElementUI from '@formily/element-plus'
 import { connect, createSchemaField, mapProps } from '@formily/vue'
 import { shallowRef, defineComponent, computed } from 'vue'
 
-import {
-  Card,
-  Text,
-  Rate,
-  Slider,
-  TreeSelect,
-} from '@formily/element-plus-renderer'
+// import {
+//   Card,
+//   Text,
+//   Rate,
+//   Slider,
+//   TreeSelect,
+// } from '@formily/element-plus-renderer'
 
 // console.log(ElementUI, 'elementUi')
 const { SchemaField } = createSchemaField({
   components: {
     ...ElementUI,
-    Card,
     Text,
-    Rate,
-    Slider,
-    TreeSelect,
-    Password: connect(
-      ElementUI.Input,
-      mapProps({}, (args) => ({
-        ...args,
-        type: 'password',
-        showPassword: true,
-      }))
-    ),
+    // Password: connect(
+    //   ElementUI.Input,
+    //   mapProps({}, (args) => ({
+    //     ...args,
+    //     type: 'password',
+    //     showPassword: true,
+    //   }))
+    // ),
   },
 })
 
@@ -47,7 +43,7 @@ export default defineComponent({
       const form = formRef.value
       const { form: formProps, schema } = treeSchemaRef.value
 
-      console.log(schema)
+      // console.log(schema)
       return (
         <div
           style={{

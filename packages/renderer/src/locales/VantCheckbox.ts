@@ -3,7 +3,8 @@ export const VantCheckboxGroup = {
       title: '复选框组',
       settings: {
         'x-component-props': {
-          optionType: { title: '选项类型', dataSource: ['默认', '按钮'] },
+          label: {title:'字段标题'},
+          direction: { title: '排列方向', dataSource: ['默认', '按钮'] },
         },
       },
     },
@@ -11,7 +12,8 @@ export const VantCheckboxGroup = {
       title: 'Checkbox',
       settings: {
         'x-component-props': {
-          optionType: { title: '选项类型', dataSource: ['默认', '按钮'] },
+          label: {title:'字段标题'},
+          direction: { title: '排列方向', dataSource: ['默认', '按钮'] },
         },
       },
     },

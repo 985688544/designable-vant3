@@ -4,6 +4,7 @@ import { ref, defineComponent } from 'vue'
 import { Picker as VanPicker, Popup as VanPopup, Cell } from 'vant'
 import VantFormItem from '../vant-form-item'
 import { VantPreviewText } from '../vant-preview-text'
+import { vantStylePrefix } from '../__builtins__/configs'
 
 const BasePicker = observer(
   defineComponent({
@@ -24,26 +25,27 @@ const BasePicker = observer(
         pickerListeners,
       } = props as any
 
-      console.log(formItemProps, "formItemProps")
+      console.log(attrs, "attrsattrs")
+
       const show = ref(false)
 
       return () => {
         return h(
-          Cell,
+          'div',
           {},
           {
             default: () => [
               h(
                 VantFormItem,
                 {
+                  label: attrs.label,
+                  class: [`${vantStylePrefix}-Picker`],
                   attrs: {
-                    modelValue: attrs.value,  
-                    readonly:true,           
+                    modelValue: attrs.value,          
                     ...formItemProps,   
                   },
                   on: {
                     click: () => {
-                      // if(formItemProps.readonly) return
                         show.value = true  
                     },
                   },
