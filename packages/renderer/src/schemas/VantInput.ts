@@ -3,16 +3,34 @@ import { ISchema } from '@formily/vue'
 
 export const VantInput: ISchema & { TextArea?: ISchema } = {
   type: 'object',
-  readOnly: true,
   properties: {
     label: {
         type: 'string',
         'x-decorator': 'VantFormItem',
         'x-component': 'Input',
-        default: '标题',
+        default: '输入框',
         'x-component-props': {
+          label :''
         }
     },
+    placeholder: {
+      type: 'string',
+      'x-decorator': 'VantFormItem',
+      'x-component': 'Input',
+      default: 'please input',
+      'x-component-props': {
+        clearable: true,
+        placeholder: '请输入'
+      },
+    },
+    required: {
+      type: 'boolean',
+      'x-decorator': 'VantFormItem',
+      'x-component': 'Switch',
+      'x-component-props': {
+        required: true
+      }
+   },
     maxlength: {
       type: 'number',
       'x-decorator': 'VantFormItem',
@@ -26,18 +44,9 @@ export const VantInput: ISchema & { TextArea?: ISchema } = {
       'x-decorator': 'VantFormItem',
       'x-component': 'InputNumber',
       'x-component-props': {
+      },
+    },
 
-      },
-    },
-    placeholder: {
-      type: 'string',
-      default: '请输入',
-      'x-decorator': 'VantFormItem',
-      'x-component': 'Input',
-      'x-component-props': {
-        clearable: true,
-      },
-    },
     // formatter: {
     //     type: 'string',
     //     'x-decorator': 'FormItem',
@@ -54,21 +63,16 @@ export const VantInput: ISchema & { TextArea?: ISchema } = {
     },
     clearable: {
       type: 'boolean',
-      'x-decorator': 'FormItem',
+      'x-decorator': 'VantFormItem',
       'x-component': 'Switch',
     },
     border: {
         type: 'boolean',
         default: true,
-        'x-decorator': 'FormItem',
+        'x-decorator': 'VantFormItem',
         'x-component': 'Switch',
       },
-    required: {
-        type: 'boolean',
-        default: true,
-        'x-decorator': 'FormItem',
-        'x-component': 'Switch',
-     },
+
     // autofocus: {
     //     type: 'boolean',
     //     'x-decorator': 'FormItem',

@@ -1,9 +1,10 @@
+import { usePlaceholder } from './../preview-text/index';
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { ref, defineComponent } from 'vue'
 import { Picker as VanPicker, Popup as VanPopup, Cell } from 'vant'
 import VantFormItem from '../vant-form-item'
-import { VantPreviewText } from '../vant-preview-text'
+import { VantPreviewText, vantUsePlaceholder } from '../vant-preview-text'
 import { vantStylePrefix } from '../__builtins__/configs'
 
 const BasePicker = observer(
@@ -25,10 +26,7 @@ const BasePicker = observer(
         pickerListeners,
       } = props as any
 
-      // console.log(attrs, "attrsattrs")
-
-      const show = ref(false)
-
+      const show = ref(false)  
       return () => {
         return h(
           'div',
@@ -40,8 +38,10 @@ const BasePicker = observer(
                 {
                   label: attrs.label,
                   class: [`${vantStylePrefix}-Picker`],
+                 
                   attrs: {
-                    modelValue: attrs.value,          
+                    modelValue: attrs.value,    
+                    placeholder: attrs.placeholder || '',
                     ...formItemProps,   
                   },
                   on: {
@@ -104,7 +104,7 @@ const BasePicker = observer(
 
 export const VantPicker = connect(
   BasePicker,
-  mapProps({ readOnly: 'readonly' }),
+  mapProps({ readOnly: 'readOnly' }),
   mapReadPretty(VantPreviewText.Picker)
 )
 

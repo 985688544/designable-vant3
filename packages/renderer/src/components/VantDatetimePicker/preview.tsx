@@ -6,20 +6,7 @@ import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
 
-const PickerFile = defineComponent({
-  name: 'VantDatetimePicker',
-  setup(props, { slots, attrs }) {
-    return () => {
-      return (
-        <FormilyVantDateTimePicker {...attrs} {...props}>
-          {slots.default?.()}
-        </FormilyVantDateTimePicker>
-      )
-    }
-  },
-})
-
-export const VantDatetimePicker = composeExport(PickerFile, {
+export const VantDatetimePicker = composeExport(FormilyVantDateTimePicker, {
   Behvior: createBehavior({
     name: 'VantDatetimePicker',
     extends: ['Field'], // 匹配
@@ -27,7 +14,7 @@ export const VantDatetimePicker = composeExport(PickerFile, {
       return node.props?.['x-component'] === 'VantDatetimePicker'
     },
     designerProps: {
-      propsSchema: createFieldSchema(AllSchemas.VantDateTimePicker),
+      propsSchema: createFieldSchema(AllSchemas.VantDatetimePicker),
     },
     designerLocales: AllLocales.VantDateTimePicker,
   }),
@@ -40,10 +27,7 @@ export const VantDatetimePicker = composeExport(PickerFile, {
           type: 'string',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantDatetimePicker',
-          'x-component-props': {
-            label: '时间选择器',
-            // textContent: '上传',
-          },
+          'x-component-props': {},
         },
       },
     ],
