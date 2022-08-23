@@ -4,6 +4,7 @@ import { ref, defineComponent } from 'vue'
 import { Calendar as VanCalendar } from 'vant'
 import VantFormItem from '../vant-form-item'
 import { VantPreviewText } from '../vant-preview-text'
+import { stylePrefix } from '../__builtins__/configs'
 
 const BaseCalendar = observer(
   defineComponent({
@@ -29,6 +30,7 @@ const BaseCalendar = observer(
                 VantFormItem,
                 {
                   label: attrs.label,
+                  class: [`${stylePrefix}-Calendar-FormItem`],
                   attrs: {
                     modelValue: format ? format(attrs.value) : attrs.value, 
                     ...formItemProps,
@@ -44,7 +46,7 @@ const BaseCalendar = observer(
               ),
               h(
                 VanCalendar,
-                {
+                { 
                   teleport: 'body',
                   attrs: {
                     show: show.value,

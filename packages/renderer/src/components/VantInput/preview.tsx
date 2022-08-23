@@ -14,21 +14,20 @@ import { defineComponent } from 'vue'
 import { ISchema } from '@formily/vue'
 import { observable, observe } from '@formily/reactive'
 
-const Field = defineComponent({
-  name: 'VantInput',
-  props: { title: {}, readonly: {} },
-  setup(props: ISchema, { slots, attrs }) {
-    return () => {
-      return (
-        <FormilyVantInput readonly={true} {...attrs} {...props}>
-          {slots.default?.()}
-        </FormilyVantInput>
-      )
-    }
-  },
-})
+// const Field = defineComponent({
+//   name: 'VantInput',
+//   setup(props: ISchema, { slots, attrs }) {
+//     return () => {
+//       return (
+//         <FormilyVantInput class="vant-formily-input" {...attrs} {...props}>
+//           {slots.default?.()}
+//         </FormilyVantInput>
+//       )
+//     }
+//   },
+// })
 
-export const VantInput: DnFC<VNode> = composeExport(Field, {
+export const VantInput: DnFC<VNode> = composeExport(FormilyVantInput, {
   Behavior: createBehavior({
     name: 'VantInput',
     extends: ['Field'], // 匹配
@@ -53,8 +52,7 @@ export const VantInput: DnFC<VNode> = composeExport(Field, {
           'x-decorator': 'VantFormItem',
           'x-component': 'VantInput',
           'x-component-props': {
-            // readonly: true,
-            title: 'Title',
+            // className: ['formily-in'],
           },
         },
       },

@@ -5,28 +5,25 @@ import { defineComponent } from 'vue'
 import type { FieldProps as VanInputProps } from 'vant'
 import { Field as VanInput, Cell } from 'vant'
 import { resolveComponent } from '../__builtins__/shared'
-import { stylePrefix } from '../__builtins__/configs'
+import { vantStylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
-
 
 export type vantInputProps = VanInputProps
 
 export const VantBaseInput = observer(
   defineComponent({
     name: 'FBaseInput',
-    props: { title: {} },
-
+    props: {title: {}, readonly: {}},
     setup(props, { attrs, slots, emit }) {
-      // console.log(attrs, " filed==>attrs")
-      // const FieldRef = useField()
+
+      const FieldRef = useField()
       return () => {
-        // const field  = FieldRef.value
+        const field  = FieldRef.value
         return  h(VanInput, {
-          class: [`${stylePrefix}-input`],
+          class: [`${vantStylePrefix}-input`],
           attrs: {
             ...attrs,
             ...props,
-            label:props.title,
             style: attrs.style,
             modelValue: attrs.value,
             // readonly: true,
@@ -34,6 +31,7 @@ export const VantBaseInput = observer(
           on: emit,
         }, slots)
       }
+
       }    
   })
 )
