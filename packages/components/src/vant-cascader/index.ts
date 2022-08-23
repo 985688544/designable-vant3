@@ -2,8 +2,9 @@ import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { ref, defineComponent } from 'vue'
 import { Cascader as VanCascader, Popup as VanPopup } from 'vant'
-import FormItem from '../vant-form-item'
+import VantFormItem from '../vant-form-item'
 import { VantPreviewText } from '../vant-preview-text'
+import { vantStylePrefix } from '../__builtins__/configs'
 
 const BaseCascader = observer(
   defineComponent({
@@ -26,8 +27,9 @@ const BaseCascader = observer(
           {
             default: () => [
               h(
-                FormItem,
-                {
+                VantFormItem,
+                { 
+                  class: [`${vantStylePrefix}-Cascader`],
                   attrs: {
                     label: '级联选择器',
                     modelValue: format ? format(attrs.value) : attrs.value,
