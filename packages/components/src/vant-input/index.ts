@@ -13,26 +13,25 @@ export type vantInputProps = VanInputProps
 export const VantBaseInput = observer(
   defineComponent({
     name: 'FBaseInput',
-    props: {title: {}, readonly: {}},
+    props: {},
     setup(props, { attrs, slots, emit }) {
-
-      const FieldRef = useField()
       return () => {
-        const field  = FieldRef.value
-        return  h(VanInput, {
-          class: [`${vantStylePrefix}-input`],
-          attrs: {
-            ...attrs,
-            ...props,
-            style: attrs.style,
-            modelValue: attrs.value,
-            // readonly: true,
+        return h(
+          VanInput,
+          {
+            class: [`${vantStylePrefix}-input`],
+            attrs: {
+              ...attrs,
+              ...props,
+              style: attrs.style,
+              modelValue: attrs.value,
+            },
+            on: emit,
           },
-          on: emit,
-        }, slots)
+          slots
+        )
       }
-
-      }    
+    },
   })
 )
 
