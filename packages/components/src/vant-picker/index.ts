@@ -38,7 +38,6 @@ const BasePicker = observer(
                 {
                   label: attrs.label,
                   class: [`${vantStylePrefix}-Picker`],
-                 
                   attrs: {
                     modelValue: attrs.value,    
                     placeholder: attrs.placeholder || '',

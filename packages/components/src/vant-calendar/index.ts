@@ -32,6 +32,7 @@ const BaseCalendar = observer(
                   label: attrs.label,
                   class: [`${vantStylePrefix}-Calendar`],
                   attrs: {
+                    placeholder: attrs.placeholder || '',
                     modelValue: format ? format(attrs.value) : attrs.value, 
                     ...formItemProps,
                   },
