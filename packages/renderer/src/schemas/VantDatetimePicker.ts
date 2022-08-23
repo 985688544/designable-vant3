@@ -5,7 +5,7 @@ export const VantDatetimePicker: ISchema = {
   properties: {
     label: {
       type: 'string',
-      default: '日历',
+      default: '时间选择器',
       'x-decorator': 'VantFormItem',
       'x-component': 'Input',
     },

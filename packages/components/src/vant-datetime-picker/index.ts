@@ -4,7 +4,7 @@ import { ref, defineComponent } from 'vue'
 import { DatetimePicker as VanDatetimePicker, Popup as VanPopup } from 'vant'
 // Field as VanFormItem
 import VantFormItem from '../vant-form-item'
-import { PreviewText } from '../preview-text'
+import { VantPreviewText } from '../vant-preview-text'
 import { vantStylePrefix } from '../__builtins__/configs'
 
 const BaseDatetimePicker = observer(
@@ -21,6 +21,8 @@ const BaseDatetimePicker = observer(
       } = attrs as any
       const show = ref(false)
 
+      // console.log(attrs, "!22")
+
       return () => {
         return h(
           'div',
@@ -34,6 +36,7 @@ const BaseDatetimePicker = observer(
                   label: attrs.label,
                   attrs: {
                     modelValue: attrs.value,
+                    placeholder: attrs.placeholder || '',
                     ...formItemProps,
                   },
                   on: {
@@ -98,7 +101,7 @@ const BaseDatetimePicker = observer(
 export const VantDatetimePicker = connect(
   BaseDatetimePicker,
   mapProps({ readOnly: 'readonly' }),
-  mapReadPretty(PreviewText.DatetimePicker)
+  mapReadPretty(VantPreviewText.DatetimePicker)
 )
 
 export default VantDatetimePicker

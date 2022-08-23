@@ -7,10 +7,11 @@ import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
 
 export const VantDatetimePicker = composeExport(FormilyVantDateTimePicker, {
-  Behvior: createBehavior({
-    name: 'VantDatetimePicker',
+  Behavior: createBehavior({
+    name: 'DnVantDatetimePicker',
     extends: ['Field'], // 匹配
     selector: (node) => {
+      console.log(node.props, '222')
       return node.props?.['x-component'] === 'VantDatetimePicker'
     },
     designerProps: {
@@ -19,7 +20,7 @@ export const VantDatetimePicker = composeExport(FormilyVantDateTimePicker, {
     designerLocales: AllLocales.VantDateTimePicker,
   }),
   Resource: createResource({
-    title: 'Vant-datetimePicker',
+    title: 'datetimePicker',
     elements: [
       {
         componentName: 'Field',
