@@ -7,7 +7,7 @@ import { Field as VanFormItem } from 'vant'
 import { stylePrefix } from '../__builtins__/configs'
 import { inputValidate } from '../vant-input'
 
-export type VantFormItemProps = VanFormItemProps
+export type FormItemProps = VanFormItemProps
 
 export const VantBaseFormItem = observer(
   defineComponent({
@@ -37,7 +37,7 @@ export const VantBaseFormItem = observer(
   })
 )
 
-export const VantFormItem = connect(
+export const FormItem = connect(
   VantBaseFormItem,
   mapProps(
     {
@@ -55,4 +55,4 @@ export const VantFormItem = connect(
   inputValidate
 )
 
-export default VantFormItem
+export default FormItem

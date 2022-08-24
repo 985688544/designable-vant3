@@ -2,7 +2,7 @@ import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { ref, defineComponent } from 'vue'
 import { Cascader as VanCascader, Popup as VanPopup } from 'vant'
-import VantFormItem from '../vant-form-item'
+import { Field } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
 import { vantStylePrefix } from '../__builtins__/configs'
 
@@ -27,22 +27,26 @@ const BaseCascader = observer(
           {
             default: () => [
               h(
-                VantFormItem,
-                { 
+                'div',
+                {
                   class: [`${vantStylePrefix}-Cascader`],
-                  attrs: {
-                    label: attrs.label,
-                    placeholder: attrs.placeholder || '',
-                    modelValue: format ? format(attrs.value) : attrs.value,
-                    ...formItemProps,
-                  },
-                  on: {
-                    click: () => {
-                      show.value = true
+                },
+                h(
+                  Field,
+                  {
+                    attrs: {
+                      modelValue: attrs.value,
+                      placeholder: attrs.placeholder || '',
+                      ...formItemProps,
+                    },
+                    on: {
+                      click: () => {
+                        show.value = true
+                      },
                     },
                   },
-                },
-                slots
+                  {}
+                )
               ),
               h(
                 VanPopup,
@@ -73,12 +77,12 @@ const BaseCascader = observer(
                           close: () => {
                             show.value = false
                           },
-                          finish: ({selectedOptions}: any) => {
-
+                          finish: ({ selectedOptions }: any) => {
                             // const { options }  = cascaderProps
 
-                            const fieldVal =  selectedOptions.map((option) => option.text).join('/');
-                            
+                            const fieldVal = selectedOptions
+                              .map((option) => option.text)
+                              .join('/')
 
                             emit('change', fieldVal)
                             show.value = false

@@ -27,9 +27,10 @@ export const VantPicker: DnFC<VNode> = composeExport(FormilyVantPicker, {
         props: {
           type: 'string',
           'x-index': 20,
-          'x-decorator': 'VantFormItem',
+          'x-decorator': 'FormItem',
           'x-component': 'VantPicker',
           'x-component-props': {
+            enum: ['事业一部', '事业二部', '事业三部'],
             pickerProps: {
               // formItemProps: {
               //   label: '选择器',

@@ -14,16 +14,10 @@ export const VantCheckbox: ISchema & { Group?: ISchema } = {
 VantCheckbox.Group = {
   type: 'object',
   properties: {
-    label: {
-      type: 'string',
-      default: '复选框组',
-      'x-decorator': 'VantFormItem',
-      'x-component': 'Input',
-    },
     direction: {
       type: 'string',
       enum: ['horizontal', 'vertical'],
-      'x-decorator': 'VantFormItem',
+      'x-decorator': 'FormItem',
       'x-component': 'Radio.Group',
       'x-component-props': {
         direction: 'horizontal',
@@ -33,7 +27,7 @@ VantCheckbox.Group = {
     //   default: 'default',
     //   type: 'string',
     //   enum: ['large', 'default', 'small', null],
-    //   'x-decorator': 'VantFormItem',
+    //   'x-decorator': 'FormItem',
     //   'x-component': 'Select',
     //   'x-component-props': {
         

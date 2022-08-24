@@ -2,7 +2,7 @@ import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { ref, defineComponent } from 'vue'
 import { Calendar as VanCalendar } from 'vant'
-import VantFormItem from '../vant-form-item'
+import { Field } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
 import { vantStylePrefix } from '../__builtins__/configs'
 
@@ -18,8 +18,7 @@ const BaseCalendar = observer(
       } = attrs as any
       const { format } = formItemProps
       const show = ref(false)
-      // console.log(props, "props")
-      // console.log(attrs, "attrsattrs")
+
       return () => {
         return h(
           'div',
@@ -27,27 +26,31 @@ const BaseCalendar = observer(
           {
             default: () => [
               h(
-                VantFormItem,
+                'div',
                 {
-                  label: attrs.label,
                   class: [`${vantStylePrefix}-Calendar`],
-                  attrs: {
-                    placeholder: attrs.placeholder || '',
-                    modelValue: format ? format(attrs.value) : attrs.value, 
-                    ...formItemProps,
-                  },
-                  on: {
-                    click: () => {
-                      show.value = true
-                    },
-                    ...fieldListeners,
-                  },
                 },
-                slots
+                h(
+                  Field,
+                  {
+                    attrs: {
+                      modelValue: attrs.value,
+                      placeholder: attrs.placeholder || '',
+                      ...formItemProps,
+                    },
+                    on: {
+                      click: () => {
+                        show.value = true
+                      },
+                      ...fieldListeners,
+                    },
+                  },
+                  {}
+                )
               ),
               h(
                 VanCalendar,
-                { 
+                {
                   teleport: 'body',
                   attrs: {
                     show: show.value,
@@ -58,7 +61,10 @@ const BaseCalendar = observer(
                       show.value = false
                     },
                     confirm: (val: any) => {
-                      const formatDate = (date) => `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+                      const formatDate = (date) =>
+                        `${date.getFullYear()}/${
+                          date.getMonth() + 1
+                        }/${date.getDate()}`
                       emit('change', formatDate(val))
                       show.value = false
                     },

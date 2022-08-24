@@ -26,7 +26,7 @@ export const VantCascader: DnFC<VNode> = composeExport(FormilyVantCascader, {
         componentName: 'Field',
         props: {
           type: 'string',
-          'x-decorator': 'VantFormItem',
+          'x-decorator': 'FormItem',
           'x-component': 'VantCascader',
           'x-component-props': {
             cascaderProps: {

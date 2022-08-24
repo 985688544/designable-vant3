@@ -11,9 +11,10 @@ import {
 import {
   Checkbox as VanCheckbox,
   CheckboxGroup as VanCheckboxGroup,
+  Cell
 } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
-import VantFormItem from '../vant-form-item'
+import FormItem from '../form-item'
 import { vantStylePrefix } from '../__builtins__/configs'
 
 const TransformVanCheckbox = transformComponent(VanCheckbox, {
@@ -59,7 +60,7 @@ const CheckboxOption = defineComponent({
         )
       }
       return h(
-        VantFormItem,
+        FormItem,
         {},
         {
           default: () => [
@@ -142,9 +143,9 @@ const CheckboxGroupOption = defineComponent({
             }
           : slots
       return h(
-        VantFormItem,
+        Cell,
         {
-          label: '默认',
+          // label: '默认',
         },
         {
           default: () => [

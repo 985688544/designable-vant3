@@ -25,11 +25,9 @@ export const VantCalendar = composeExport(FormilyVantCalendar, {
         componentName: 'Field',
         props: {
           type: 'string',
-          'x-decorator': 'VantFormItem',
+          'x-decorator': 'FormItem',
           'x-component': 'VantCalendar',
-          'x-component-props': {
-            label: '日历',
-          },
+          'x-component-props': {},
         },
       },
     ],

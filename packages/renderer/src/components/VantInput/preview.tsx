@@ -14,19 +14,6 @@ import { defineComponent } from 'vue'
 import { ISchema } from '@formily/vue'
 import { observable, observe } from '@formily/reactive'
 
-// const Field = defineComponent({
-//   name: 'VantInput',
-//   setup(props: ISchema, { slots, attrs }) {
-//     return () => {
-//       return (
-//         <FormilyVantInput class="vant-formily-input" {...attrs} {...props}>
-//           {slots.default?.()}
-//         </FormilyVantInput>
-//       )
-//     }
-//   },
-// })
-
 export const VantInput: DnFC<VNode> = composeExport(FormilyVantInput, {
   Behavior: createBehavior({
     name: 'VantInput',
@@ -49,7 +36,7 @@ export const VantInput: DnFC<VNode> = composeExport(FormilyVantInput, {
         componentName: 'Field',
         props: {
           type: 'string',
-          'x-decorator': 'VantFormItem',
+          'x-decorator': 'FormItem',
           'x-component': 'VantInput',
           'x-component-props': {
             // className: ['formily-in'],

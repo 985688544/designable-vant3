@@ -2,8 +2,7 @@ import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { ref, defineComponent } from 'vue'
 import { DatetimePicker as VanDatetimePicker, Popup as VanPopup } from 'vant'
-// Field as VanFormItem
-import VantFormItem from '../vant-form-item'
+import { Field } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
 import { vantStylePrefix } from '../__builtins__/configs'
 
@@ -30,23 +29,31 @@ const BaseDatetimePicker = observer(
           {
             default: () => [
               h(
-                VantFormItem,
+                'div',
                 {
                   class: [`${vantStylePrefix}-Datetime-picker`],
-                  label: attrs.label,
-                  attrs: {
-                    modelValue: attrs.value,
-                    placeholder: attrs.placeholder || '',
-                    ...formItemProps,
-                  },
-                  on: {
-                    click: () => {
-                      show.value = true
-                    },
-                    ...fieldListeners,
-                  },
                 },
-                slots
+                {
+                  default: () => [
+                    h(
+                      Field,
+                      {
+                        attrs: {
+                          modelValue: attrs.value,
+                          placeholder: attrs.placeholder || '',
+                          ...formItemProps,
+                        },
+                        on: {
+                          click: () => {
+                            show.value = true
+                          },
+                          ...fieldListeners,
+                        },
+                      },
+                      {}
+                    ),
+                  ],
+                }
               ),
               h(
                 VanPopup,

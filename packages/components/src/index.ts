@@ -37,7 +37,7 @@ export * from './upload'
 
 export * from './vant-space'
 export * from './vant-input'
-export * from './vant-form-item'
+// export * from './vant-form-item'
 export * from './vant-preview-text'
 export * from './vant-calendar'
 export * from './vant-area'
