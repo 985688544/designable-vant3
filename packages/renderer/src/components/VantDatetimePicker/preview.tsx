@@ -24,6 +24,7 @@ export const VantDatetimePicker = composeExport(FormilyVantDateTimePicker, {
       {
         componentName: 'Field',
         props: {
+          title: '时间选择器',
           type: 'string',
           'x-decorator': 'FormItem',
           'x-component': 'VantDatetimePicker',

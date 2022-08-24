@@ -28,6 +28,7 @@ export const VantCheckbox: DnFC<VNode> = composeExport(FormilyVantCheckbox, {
         componentName: 'Field',
         props: {
           type: 'array' || 'Array<string | number>',
+          title: '复选框',
           'x-decorator': 'FormItem',
           'x-component': 'VantCheckbox.Group',
           'x-component-props': {

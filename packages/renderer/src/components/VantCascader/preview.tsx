@@ -28,6 +28,7 @@ export const VantCascader: DnFC<VNode> = composeExport(FormilyVantCascader, {
           type: 'string',
           'x-decorator': 'FormItem',
           'x-component': 'VantCascader',
+          title: '级联选择器',
           'x-component-props': {
             cascaderProps: {
               options: [

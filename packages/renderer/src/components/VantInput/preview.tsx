@@ -35,6 +35,7 @@ export const VantInput: DnFC<VNode> = composeExport(FormilyVantInput, {
       {
         componentName: 'Field',
         props: {
+          title: '输入框',
           type: 'string',
           'x-decorator': 'FormItem',
           'x-component': 'VantInput',
