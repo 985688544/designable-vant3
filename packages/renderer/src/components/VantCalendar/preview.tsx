@@ -19,7 +19,7 @@ export const VantCalendar = composeExport(FormilyVantCalendar, {
     designerLocales: AllLocales.VantCalendar,
   }),
   Resource: createResource({
-    title: 'vant-calendar',
+    // title: 'vant-calendar',
     elements: [
       {
         componentName: 'Field',

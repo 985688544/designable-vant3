@@ -12,15 +12,17 @@ export const VantCheckbox: DnFC<VNode> = composeExport(FormilyVantCheckbox, {
   Behavior: createBehavior({
     name: 'VantCheckbox.Group',
     extends: ['Field'],
-    selector: (node) => node.props?.['x-component'] === 'VantCheckbox.Group',
+    selector: (node) => {
+      return node.props?.['x-component'] === 'VantCheckbox.Group'
+    },
     designerProps: {
       propsSchema: createFieldSchema(AllSchemas.VantCheckbox.Group),
     },
     designerLocales: AllLocales.VantCheckboxGroup,
   }),
   Resource: createResource({
-    icon: 'CheckboxGroupSource',
-    title: 'vant-Checkbox',
+    // icon: 'CheckboxGroupSource',
+    // title: 'vant-Checkbox',
     elements: [
       {
         componentName: 'Field',

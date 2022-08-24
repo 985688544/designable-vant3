@@ -25,7 +25,7 @@ export const TreeNodeWidgetComponent = defineComponent({
     node: Object as PropType<TreeNode>,
   },
   setup(props) {
-    console.log(props, 'prosp')
+    // console.log(props, 'prosp')
     const designerRef = useDesigner(props.node?.designerProps?.effects)
     const componentsRef = useComponents()
 
@@ -79,7 +79,7 @@ export const TreeNodeWidgetComponent = defineComponent({
       const renderComponent = () => {
         const componentName = node.componentName
         const Component = componentsRef.value?.[componentName]
-        console.log(Component, 'Component')
+
         const dataId = {}
         if (Component) {
           if (designerRef.value) {
@@ -119,7 +119,7 @@ export const ComponentTreeWidgetComponent = observer(
       const treeRef = useTree()
       const prefixRef = usePrefix('component-tree')
       const designerRef = useDesigner()
-      console.log(designerRef, 'designerRef')
+      // console.log(designerRef, 'designerRef')
 
       // 全局注册
       GlobalRegistry.registerDesignerBehaviors(props.components!)

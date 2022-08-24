@@ -1,6 +1,6 @@
 export const VantInput = {
     'zh-CN': {
-      title: 'Vant输入框',
+      title: '输入框',
       settings: {
         'x-component-props': {
           label: 'Label',
@@ -24,7 +24,7 @@ export const VantInput = {
       },
     },
     'en-US': {
-      title: 'Vant输入框',
+      title: '输入框',
       settings: {
         'x-component-props': {
           label: 'Label',

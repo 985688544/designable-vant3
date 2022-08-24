@@ -14,9 +14,8 @@ export const VantBaseFormItem = observer(
     name: 'FBaseFormItem',
     setup(props, { attrs, slots, emit }) 
     {
-      return () => {
-    console.log(slots.default, "!222")
 
+      return () => {
         return h(
           VanFormItem,
           {

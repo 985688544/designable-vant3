@@ -42,8 +42,8 @@ export const VantInput: DnFC<VNode> = composeExport(FormilyVantInput, {
     designerLocales: AllLocales.VantInput,
   }),
   Resource: createResource({
-    icon: 'InputSource',
-    title: 'vant-Field', // 覆盖表单左侧title
+    // icon: 'InputSource',
+    // title: 'vant-Field', // 覆盖表单左侧title
     elements: [
       {
         componentName: 'Field',

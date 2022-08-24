@@ -37,7 +37,7 @@ const VantInput = observer(
     name: 'FPreviewTextInput',
     props: ['value'],
     setup(props, { attrs, slots }) {
-      console.log(props, "@233")
+      // console.log(props, "@233")
       const fieldRef = useField<Field>()
       const field = fieldRef.value
       const value = toRef(props, 'value')

@@ -18,8 +18,8 @@ const BaseCalendar = observer(
       } = attrs as any
       const { format } = formItemProps
       const show = ref(false)
-      console.log(props, "props")
-      console.log(attrs, "attrsattrs")
+      // console.log(props, "props")
+      // console.log(attrs, "attrsattrs")
       return () => {
         return h(
           'div',
@@ -32,6 +32,7 @@ const BaseCalendar = observer(
                   label: attrs.label,
                   class: [`${vantStylePrefix}-Calendar`],
                   attrs: {
+                    placeholder: attrs.placeholder || '',
                     modelValue: format ? format(attrs.value) : attrs.value, 
                     ...formItemProps,
                   },

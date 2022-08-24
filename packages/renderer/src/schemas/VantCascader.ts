@@ -7,9 +7,20 @@ export const VantCascader: ISchema & { Group?: ISchema } = {
         type: 'string',
         'x-decorator': 'VantFormItem',
         'x-component': 'Input',
+        default: '级联选择器',
         "x-component-props": {
-            label: '级联选择器'
+            label: ''
         }
+      },
+      placeholder: {
+        type: 'string',
+        'x-decorator': 'VantFormItem',
+        'x-component': 'Input',
+        default: 'please input',
+        'x-component-props': {
+          clearable: true,
+          placeholder: '',
+        },
       },
   },
 }

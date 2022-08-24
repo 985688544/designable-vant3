@@ -31,7 +31,8 @@ const BaseCascader = observer(
                 { 
                   class: [`${vantStylePrefix}-Cascader`],
                   attrs: {
-                    label: '级联选择器',
+                    label: attrs.label,
+                    placeholder: attrs.placeholder || '',
                     modelValue: format ? format(attrs.value) : attrs.value,
                     ...formItemProps,
                   },
