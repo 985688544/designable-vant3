@@ -9,7 +9,7 @@ import {
   VoidField,
 } from '@formily/vue'
 import { observer } from '@formily/reactive-vue'
-import { FormItem } from '@formily/element-plus/src/'
+import { FormItem, VantFormItem } from '@formily/element-plus/src/'
 import { each, reduce } from '@formily/shared'
 import { createBehavior } from '@designable/core'
 import {
@@ -91,8 +91,11 @@ const toDesignableFieldProps = (
   id: string
 ) => {
   const results: any = {}
+  // 遍历上面定义的schema对象，fieldKey为属性，schemaKey值
   each(SchemaStateMap, (fieldKey, schemaKey) => {
+    // 所有components 上面的默认scheam配置
     const value = schema[schemaKey]
+
     if (isExpression(value)) {
       if (!NeedShownExpression[schemaKey]) return
       if (value) {
@@ -103,8 +106,12 @@ const toDesignableFieldProps = (
       results[fieldKey] = filterExpression(value)
     }
   })
+
   if (!components['FormItem']) {
     components['FormItem'] = FormItem
+  }
+  if (!components['VantFormItem']) {
+    components['VantFormItem'] = VantFormItem
   }
   const decorator =
     schema['x-decorator'] && FormPath.getIn(components, schema['x-decorator'])
@@ -130,14 +137,21 @@ const toDesignableFieldProps = (
   } else if (component) {
     FormPath.setIn(results['component'][1], nodeIdAttrName, id)
   }
+  // console.log(results, 'results')
   // vue为异步渲染需要进行缓存 不然就变成了函数
   const title = results.title
+  results.title = title || ''
+
   const description = results.description
-  results.title =
-    title && (() => <span data-content-editable="title">{title}</span>)
-  results.description = description && (
-    <span data-content-editable="description">{results.description}</span>
-  )
+
+  results.description = description
+
+  // results.title =
+  //   title && (() => <span data-content-editable="title">{title}</span>)
+
+  // results.description = description && (
+  //   <span data-content-editable="description">{results.description}</span>
+  // )
   return results
 }
 //
@@ -150,6 +164,7 @@ const FieldComponent = observer(
       const componentsRef = useComponents()
       const nodeRef = useTreeNode()
       props = attrs as ISchema
+
       return () => {
         if (!nodeRef.value) return null
         const fieldProps = toDesignableFieldProps(

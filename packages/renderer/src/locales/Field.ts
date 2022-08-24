@@ -2,6 +2,7 @@ export const Field = {
   'zh-CN': {
     settings: {
       name: '字段标识',
+      label: '字段标题',
       title: '标题',
       required: '必填',
       description: '描述',
