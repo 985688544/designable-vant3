@@ -1,4 +1,4 @@
-import { Slider as FormilyVantSlider } from '@formily/element-plus'
+import { VantSlider as FormilyVantSlider } from '@formily/element-plus'
 import { composeExport, transformComponent } from '@formily/element-plus/src/__builtins__'
 import { connect, mapProps, mapReadPretty, VueComponent } from '@formily/vue'
 import { createBehavior, createResource } from '@designable/core'

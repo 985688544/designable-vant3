@@ -1,16 +1,44 @@
+import { observer } from '@formily/reactive-vue'
+import { defineComponent } from 'vue'
 import { transformComponent } from '../__builtins__/shared'
-import { connect, mapProps, mapReadPretty } from '@formily/vue'
+import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Stepper as VanStepper } from 'vant'
-import { PreviewText } from '../preview-text'
+import { vantStylePrefix } from '../__builtins__/configs'
+import { VantPreviewText } from '../vant-preview-text'
 
-const TransformVanStepper = transformComponent(VanStepper, {
+export const VantBaseVanStepper = observer(
+  defineComponent({
+    name: 'FBaseVanStepper',
+    props: {},
+    setup(props, { attrs, slots, emit }) {
+      return () => {
+        return h(
+          VanStepper,
+          {
+            class: [`${vantStylePrefix}-Stepper`],
+            attrs: {
+              ...attrs,
+              ...props,
+              style: attrs.style,
+              modelValue: attrs.value,
+            },
+            on: emit,
+          },
+          slots
+        )
+      }
+    },
+  })
+)
+
+const TransformVanStepper = transformComponent(VantBaseVanStepper, {
   change: 'input',
 })
 
-export const Stepper = connect(
+export const VantStepper = connect(
   TransformVanStepper,
   mapProps({ readOnly: 'readonly', value: 'modelValue' }),
-  mapReadPretty(PreviewText.Stepper)
+  mapReadPretty(VantPreviewText.Stepper)
 )
 
-export default Stepper
+export default VantStepper

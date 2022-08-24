@@ -1,4 +1,4 @@
-import { Rate as FormilyVantRate } from '@formily/element-plus'
+import { VantRate as FormilyVantRate } from '@formily/element-plus'
 import { composeExport, transformComponent } from '@formily/element-plus/src/__builtins__'
 import { connect, mapProps, VueComponent } from '@formily/vue'
 import { createBehavior, createResource } from '@designable/core'
@@ -30,7 +30,7 @@ export const VantRate: DnFC<VNode> = composeExport(RateInner, {
         props: {
           type: 'number',
           title: 'Rate',
-          'x-decorator': 'FormItem',
+          'x-decorator': 'VantFormItem',
           'x-component': 'VantRate',
         },
       },

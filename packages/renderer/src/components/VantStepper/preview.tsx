@@ -1,4 +1,4 @@
-import { Stepper as FormilyVantStepper } from '@formily/element-plus'
+import { VantStepper as FormilyVantStepper } from '@formily/element-plus'
 import { composeExport } from '@formily/element-plus/src/__builtins__'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@formily/element-plus-prototypes'
@@ -19,7 +19,6 @@ export const VantStepper: DnFC<VNode> = composeExport(FormilyVantStepper, {
   }),
   Resource: createResource({
     icon: '',
-    title: 'vant-Stepper',
     elements: [
       {
         componentName: 'Field',

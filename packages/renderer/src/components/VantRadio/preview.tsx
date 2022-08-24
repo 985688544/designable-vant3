@@ -20,13 +20,11 @@ export const VantRadio: DnFC<VNode> = composeExport(FormilyVantRadio, {
   }),
   Resource: createResource({
     icon: 'RadioGroupSource',
-    title: 'vant-Radio',
     elements: [
       {
         componentName: 'Field',
         props: {
           type: 'string | number',
-          title: 'Radio Group',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantRadio.Group',
           enum: [
