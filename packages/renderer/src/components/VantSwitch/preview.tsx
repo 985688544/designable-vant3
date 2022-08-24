@@ -28,7 +28,7 @@ export const VantSwitch: DnFC<VNode> = composeExport(
           props: {
             type: 'boolean',
             title: 'Switch',
-            'x-decorator': 'FormItem',
+            'x-decorator': 'VantFormItem',
             'x-component': 'VantSwitch',
           },
         },

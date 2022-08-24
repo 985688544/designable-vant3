@@ -30,6 +30,7 @@ export const VantRadio: DnFC<VNode> = composeExport(FormilyVantRadio, {
           enum: [
             { label: '单位一', name: 1 },
             { label: '单位二', name: 2 },
+            { label: '单位三', name: 3, disabled: true },
           ],
         },
       },

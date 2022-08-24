@@ -5,6 +5,7 @@ import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Rate as VanRate } from 'vant'
 import { vantStylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
+import VantFormItem from '../vant-form-item'
 
 export const VantBaseRate = observer(
   defineComponent({
