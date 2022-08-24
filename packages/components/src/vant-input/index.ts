@@ -3,7 +3,7 @@ import { isVoidField } from '@formily/core'
 import { connect, mapProps, mapReadPretty, h, useField } from '@formily/vue'
 import { defineComponent } from 'vue'
 import type { FieldProps as VanInputProps } from 'vant'
-import { Field as VanInput, Cell } from 'vant'
+import { Field as VanInput } from 'vant'
 import { resolveComponent } from '../__builtins__/shared'
 import { vantStylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
@@ -13,9 +13,18 @@ export type vantInputProps = VanInputProps
 export const VantBaseInput = observer(
   defineComponent({
     name: 'FBaseInput',
-    props: {},
+    props: {
+      label: {},
+      required: {}
+    },
     setup(props, { attrs, slots, emit }) {
+      const { label, required } = props
+      // console.log(required, "required")
+      const Field = useField()
       return () => {
+        const FieldRef = Field.value
+      console.log(FieldRef, "props")
+
         return h(
           VanInput,
           {
@@ -97,7 +106,7 @@ export const inputValidate = mapProps<any>(
 export const VantInput = connect(
   VantBaseInput,
   mapProps({
-    readOnly: 'readonly',
+    readOnly: 'readOnly',
   }),
   mapReadPretty(VantPreviewText.VantInput)
   // inputValidate
