@@ -39,7 +39,6 @@ export const VantSlider = composeExport(
           componentName: 'Field',
           props: {
             type: 'number',
-            title: 'Slider',
             'x-decorator': 'VantFormItem',
             'x-component': 'VantSlider',
           },

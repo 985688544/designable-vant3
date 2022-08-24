@@ -12,20 +12,31 @@ export const VantBaseRate = observer(
     name: 'FBaseRate',
     props: {},
     setup(props, { attrs, slots, emit }) {
+      console.log("attrs", attrs, props)
       return () => {
         return h(
-          VanRate,
+          VantFormItem,
           {
-            class: [`${vantStylePrefix}-Rate`],
-            attrs: {
-              ...attrs,
-              ...props,
-              style: attrs.style,
-              modelValue: attrs.value,
-            },
-            on: emit,
+            label: "评分器"
           },
-          slots
+          {
+            default: () => [
+              h(
+                VanRate,
+                {
+                  class: [`${vantStylePrefix}-Rate`],
+                  attrs: {
+                    ...attrs,
+                    ...props,
+                    style: attrs.style,
+                    modelValue: attrs.value,
+                  },
+                  on: emit,
+                },
+                slots
+              ),
+            ],
+          }
         )
       }
     },

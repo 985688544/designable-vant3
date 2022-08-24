@@ -5,6 +5,7 @@ import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Slider as VanSlider } from 'vant'
 import { vantStylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
+import VantFormItem from '../vant-form-item'
 
 export const VantBaseSlider = observer(
   defineComponent({
@@ -13,18 +14,28 @@ export const VantBaseSlider = observer(
     setup(props, { attrs, slots, emit }) {
       return () => {
         return h(
-          VanSlider,
+          VantFormItem,
           {
-            class: [`${vantStylePrefix}-Slider`],
-            attrs: {
-              ...attrs,
-              ...props,
-              style: attrs.style,
-              modelValue: attrs.value,
-            },
-            on: emit,
+            label: "滑动条"
           },
-          slots
+          {
+            default: () => [
+              h(
+                VanSlider,
+                {
+                  class: [`${vantStylePrefix}-Slider`],
+                  attrs: {
+                    ...attrs,
+                    ...props,
+                    style: attrs.style,
+                    modelValue: attrs.value,
+                  },
+                  on: emit,
+                },
+                slots
+              ),
+            ],
+          }
         )
       }
     },

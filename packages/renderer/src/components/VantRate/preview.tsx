@@ -29,7 +29,6 @@ export const VantRate: DnFC<VNode> = composeExport(RateInner, {
         componentName: 'Field',
         props: {
           type: 'number',
-          title: 'Rate',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantRate',
         },

@@ -5,6 +5,7 @@ import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Switch as VanSwitch } from 'vant'
 import { vantStylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
+import VantFormItem from '../vant-form-item'
 
 export const VantBaseSwitch = observer(
   defineComponent({
@@ -13,18 +14,28 @@ export const VantBaseSwitch = observer(
     setup(props, { attrs, slots, emit }) {
       return () => {
         return h(
-          VanSwitch,
+          VantFormItem,
           {
-            class: [`${vantStylePrefix}-Switch`],
-            attrs: {
-              ...attrs,
-              ...props,
-              style: attrs.style,
-              modelValue: attrs.value,
-            },
-            on: emit,
+            label: "开关"
           },
-          slots
+          {
+            default: () => [
+              h(
+                VanSwitch,
+                {
+                  class: [`${vantStylePrefix}-Switch`],
+                  attrs: {
+                    ...attrs,
+                    ...props,
+                    style: attrs.style,
+                    modelValue: attrs.value,
+                  },
+                  on: emit,
+                },
+                slots
+              ),
+            ],
+          }
         )
       }
     },

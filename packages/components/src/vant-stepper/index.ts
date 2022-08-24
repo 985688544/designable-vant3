@@ -5,6 +5,7 @@ import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Stepper as VanStepper } from 'vant'
 import { vantStylePrefix } from '../__builtins__/configs'
 import { VantPreviewText } from '../vant-preview-text'
+import VantFormItem from '../vant-form-item'
 
 export const VantBaseVanStepper = observer(
   defineComponent({
@@ -13,18 +14,28 @@ export const VantBaseVanStepper = observer(
     setup(props, { attrs, slots, emit }) {
       return () => {
         return h(
-          VanStepper,
+          VantFormItem,
           {
-            class: [`${vantStylePrefix}-Stepper`],
-            attrs: {
-              ...attrs,
-              ...props,
-              style: attrs.style,
-              modelValue: attrs.value,
-            },
-            on: emit,
+            label: "步进器"
           },
-          slots
+          {
+            default: () => [
+              h(
+                VanStepper,
+                {
+                  class: [`${vantStylePrefix}-Stepper`],
+                  attrs: {
+                    ...attrs,
+                    ...props,
+                    style: attrs.style,
+                    modelValue: attrs.value,
+                  },
+                  on: emit,
+                },
+                slots
+              ),
+            ],
+          }
         )
       }
     },
