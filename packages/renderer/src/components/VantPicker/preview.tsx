@@ -19,24 +19,23 @@ export const VantPicker: DnFC<VNode> = composeExport(FormilyVantPicker, {
     designerLocales: AllLocales.VantPicker,
   }),
   Resource: createResource({
-    // icon: '',
+    icon: 'SelectSource',
     // title: 'Filed-Picker',
     elements: [
       {
         componentName: 'Field',
         props: {
-          type: 'string',
-          'x-index': 20,
+          title: 'Select',
           'x-decorator': 'VantFormItem',
           'x-component': 'VantPicker',
-          'x-component-props': {
-            pickerProps: {
-              // formItemProps: {
-              //   label: '选择器',
-              // },
-              columns: ['事业一部', '事业二部', '事业三部'],
-            },
-          },
+          // 'x-component-props': {
+          //   pickerProps: {
+          //     // formItemProps: {
+          //     //   label: '选择器',
+          //     // },
+          //     columns: ['事业一部', '事业二部', '事业三部'],
+          //   },
+          // },
         },
       },
     ],

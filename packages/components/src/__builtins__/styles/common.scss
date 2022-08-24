@@ -1,7 +1,8 @@
 $formily-prefix: 'formily-element-plus';
 $namespace: 'el';
 
-$formily-prefix-vant: 'formily-vant3';
+// $formily-prefix-vant: 'formily-vant3';
+$formily-prefix-vant: 'van';
 
 @import './element-plus.scss';
 @import 'element-plus/theme-chalk/src/common/var.scss';
