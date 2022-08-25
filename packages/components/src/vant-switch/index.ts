@@ -1,16 +1,17 @@
 import { transformComponent } from '../__builtins__/shared'
-import { connect, mapProps, mapReadPretty } from '@formily/vue'
+import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Switch as VanSwitch } from 'vant'
-import { PreviewText } from '../preview-text'
+import { VantPreviewText } from '../vant-preview-text'
 
 const TransformVanSwitch = transformComponent(VanSwitch, {
   change: 'modelValue',
 })
 
+
 export const VantSwitch = connect(
   TransformVanSwitch,
   mapProps({ readOnly: 'readonly', value: 'modelValue' }),
-  mapReadPretty(PreviewText.Switch)
+  mapReadPretty(VantPreviewText.Switch)
 )
 
 export default VantSwitch
