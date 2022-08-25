@@ -12,7 +12,7 @@ import type {
 } from 'vant'
 import { Radio as VanRadio, RadioGroup as VanRadioGroup } from 'vant'
 import { vantStylePrefix } from '../__builtins__/configs'
-import VantFormItem from '../vant-form-item'
+import { Cell } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
 
 export type VantRadioGroupProps = VanRadioGroupProps & {
@@ -97,8 +97,8 @@ const RadioGroupOption = defineComponent({
                 }),
             }
           : slots
-      return h(VantFormItem, {
-        label: '单选框组',
+      return h(Cell, {
+      
       }, {
         default: () => [
           h(
@@ -107,6 +107,7 @@ const RadioGroupOption = defineComponent({
               direction: 'horizontal',
               attrs: {
                 ...attrs,
+              
               },
               on: emit,
             },

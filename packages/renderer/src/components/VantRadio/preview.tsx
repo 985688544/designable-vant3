@@ -1,6 +1,5 @@
 import { VantRadio as FormilyVantRadio } from '@formily/element-plus'
 import { composeExport } from '@formily/element-plus/src/__builtins__'
-import type { VueComponent } from '@formily/vue'
 import { createBehavior, createResource } from '@designable/core'
 import { DnFC } from '@formily/element-plus-prototypes'
 import { createFieldSchema } from '../Field'
@@ -25,7 +24,7 @@ export const VantRadio: DnFC<VNode> = composeExport(FormilyVantRadio, {
         componentName: 'Field',
         props: {
           type: 'string | number',
-          'x-decorator': 'VantFormItem',
+          'x-decorator': 'FormItem',
           'x-component': 'VantRadio.Group',
           enum: [
             { label: '单位一', name: 1 },

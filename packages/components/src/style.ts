@@ -17,9 +17,8 @@ import './form/style.scss'
 import './space/style.scss'
 
 import './vant-input/style.scss'
-
+import './vant-slider/style.scss'
 // import './vant-array-items/style.sass'
-// import './vant-form-item/style.sass'
 // import './vant-form-layout/style.sass'
 // import './vant-preview-text/style.sass'
 // import './vant-space/style.sass'

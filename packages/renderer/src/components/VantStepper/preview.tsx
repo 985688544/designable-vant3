@@ -24,8 +24,8 @@ export const VantStepper: DnFC<VNode> = composeExport(FormilyVantStepper, {
         componentName: 'Field',
         props: {
           type: 'string | number',
-          title: "步进器",
-          'x-decorator': 'VantFormItem',
+          title: '步进器',
+          'x-decorator': 'FormItem',
           'x-component': 'VantStepper',
         },
       },

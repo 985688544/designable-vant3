@@ -14,7 +14,6 @@ import {
   Cell
 } from 'vant'
 import { VantPreviewText } from '../vant-preview-text'
-import FormItem from '../form-item'
 import { vantStylePrefix } from '../__builtins__/configs'
 
 const TransformVanCheckbox = transformComponent(VanCheckbox, {
@@ -60,7 +59,7 @@ const CheckboxOption = defineComponent({
         )
       }
       return h(
-        FormItem,
+        'div',
         {},
         {
           default: () => [

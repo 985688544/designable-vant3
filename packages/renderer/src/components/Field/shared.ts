@@ -95,7 +95,7 @@ export const createFieldSchema = (component?: ISchema, decorator: ISchema = AllS
                 properties: {
                     name: { // 字段标识
                         type: 'string',
-                        'x-decorator': 'VantFormItem',
+                        'x-decorator': 'FormItem',
                         'x-component': 'Input',
                         'x-component-props': {
                             clearable: true
@@ -103,48 +103,48 @@ export const createFieldSchema = (component?: ISchema, decorator: ISchema = AllS
                     },
                     title: { // 标题
                         type: 'string',
-                        'x-decorator': 'VantFormItem',
+                        'x-decorator': 'FormItem',
                         'x-component': 'Input',
                         'x-component-props': {
                             clearable: true,
                             title: ''
                         }
                     },
-                    // description: { // 描述
-                    //     type: 'string',
-                    //     'x-decorator': 'VantFormItem',
-                    //     'x-component': 'Input.TextArea',
-                    //     'x-component-props': {
-                    //         rows: 1
-                    //     }
-                    // },
-                    // 'x-display': { // 展示状态
-                    //     default: 'visible',
-                    //     type: 'string',
-                    //     enum: ['visible', 'hidden', 'none', ''],
-                    //     'x-decorator': 'VantFormItem',
-                    //     'x-component': 'Select',
-                    //     'x-component-props': {}
-                    // },
+                    description: { // 描述
+                        type: 'string',
+                        'x-decorator': 'FormItem',
+                        'x-component': 'Input.TextArea',
+                        'x-component-props': {
+                            rows: 1
+                        }
+                    },
+                    'x-display': { // 展示状态
+                        default: 'visible',
+                        type: 'string',
+                        enum: ['visible', 'hidden', 'none', ''],
+                        'x-decorator': 'FormItem',
+                        'x-component': 'Select',
+                        'x-component-props': {}
+                    },
                     // 'x-pattern': { // ui状态
                     //     default: 'editable',
                     //     type: 'string',
                     //     enum: ['editable', 'disabled', 'readOnly', 'readPretty', ''],
-                    //     'x-decorator': 'VantFormItem',
+                    //     'x-decorator': 'FormItem',
                     //     'x-component': 'Select',
                     //     'x-component-props': {}
                     // },
                     default: { // 默认值
-                        'x-decorator': 'VantFormItem',
+                        'x-decorator': 'FormItem',
                         'x-component': 'ValueInput',
                         'x-value': ''
                     },
                     // enum: { // 可选项
-                    //     'x-decorator': 'VantFormItem',
+                    //     'x-decorator': 'FormItem',
                     //     'x-component': DataSourceSetter,
                     // },
                     // 'x-reactions': {  //响应器规则
-                    //     'x-decorator': 'VantFormItem',
+                    //     'x-decorator': 'FormItem',
                     //     'x-component': ReactionsSetter,
                     // },
                     // 'x-validator': { // 校验规则
@@ -153,7 +153,7 @@ export const createFieldSchema = (component?: ISchema, decorator: ISchema = AllS
                     // },
                     required: { // 必填
                         type: 'boolean',
-                        'x-decorator': 'VantFormItem',
+                        'x-decorator': 'FormItem',
                         'x-component': 'Switch'
                     }
                 }

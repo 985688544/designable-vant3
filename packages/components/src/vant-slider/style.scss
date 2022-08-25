@@ -1,0 +1,9 @@
+@import '../__builtins__/styles/common.scss';
+
+.#{$formily-prefix-vant}-slider1{
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center;
+    margin-left: 10px;
+}

@@ -9,7 +9,7 @@ import {
   VoidField,
 } from '@formily/vue'
 import { observer } from '@formily/reactive-vue'
-import { FormItem, VantFormItem } from '@formily/element-plus/src/'
+import { FormItem } from '@formily/element-plus/src/'
 import { each, reduce } from '@formily/shared'
 import { createBehavior } from '@designable/core'
 import {
@@ -110,9 +110,6 @@ const toDesignableFieldProps = (
   if (!components['FormItem']) {
     components['FormItem'] = FormItem
   }
-  if (!components['VantFormItem']) {
-    components['VantFormItem'] = VantFormItem
-  }
   const decorator =
     schema['x-decorator'] && FormPath.getIn(components, schema['x-decorator'])
   const component =
@@ -146,12 +143,12 @@ const toDesignableFieldProps = (
 
   results.description = description
 
-  // results.title =
-  //   title && (() => <span data-content-editable="title">{title}</span>)
+  results.title =
+    title && (() => <span data-content-editable="title">{title}</span>)
 
-  // results.description = description && (
-  //   <span data-content-editable="description">{results.description}</span>
-  // )
+  results.description = description && (
+    <span data-content-editable="description">{results.description}</span>
+  )
   return results
 }
 //

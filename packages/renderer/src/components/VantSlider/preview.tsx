@@ -1,5 +1,8 @@
 import { VantSlider as FormilyVantSlider } from '@formily/element-plus'
-import { composeExport, transformComponent } from '@formily/element-plus/src/__builtins__'
+import {
+  composeExport,
+  transformComponent,
+} from '@formily/element-plus/src/__builtins__'
 import { connect, mapProps, mapReadPretty, VueComponent } from '@formily/vue'
 import { createBehavior, createResource } from '@designable/core'
 import { createFieldSchema } from '../Field'
@@ -20,31 +23,28 @@ const InnerSlider = connect(
   mapReadPretty(PreviewText.Input)
 )
 
-export const VantSlider = composeExport(
-  InnerSlider,
-  {
-    Behavior: createBehavior({
-      name: 'VantSlider',
-      extends: ['Field'],
-      selector: (node) => node.props?.['x-component'] === 'VantSlider',
-      designerProps: {
-        propsSchema: createFieldSchema(AllSchemas.VantSlider),
-      },
-      designerLocales: AllLocales.VantSlider,
-    }),
-    Resource: createResource({
-      icon: 'SliderSource',
-      elements: [
-        {
-          componentName: 'Field',
-          props: {
-            type: 'number',
-            title: '滑动条',
-            'x-decorator': 'VantFormItem',
-            'x-component': 'VantSlider',
-          },
+export const VantSlider = composeExport(InnerSlider, {
+  Behavior: createBehavior({
+    name: 'VantSlider',
+    extends: ['Field'],
+    selector: (node) => node.props?.['x-component'] === 'VantSlider',
+    designerProps: {
+      propsSchema: createFieldSchema(AllSchemas.VantSlider),
+    },
+    designerLocales: AllLocales.VantSlider,
+  }),
+  Resource: createResource({
+    icon: 'SliderSource',
+    elements: [
+      {
+        componentName: 'Field',
+        props: {
+          type: 'number',
+          title: '滑动条',
+          'x-decorator': 'FormItem',
+          'x-component': 'VantSlider',
         },
-      ],
-    }),
-  }
-)
+      },
+    ],
+  }),
+})
