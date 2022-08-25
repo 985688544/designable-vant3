@@ -39,6 +39,7 @@ export const VantSlider = composeExport(
           componentName: 'Field',
           props: {
             type: 'number',
+            title: '滑动条',
             'x-decorator': 'VantFormItem',
             'x-component': 'VantSlider',
           },
