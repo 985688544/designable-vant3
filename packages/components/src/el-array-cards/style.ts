@@ -4,4 +4,4 @@ import 'element-plus/theme-chalk/src/empty.scss'
 import 'element-plus/theme-chalk/src/row.scss'
 
 // 依赖
-import '../array-base/style'
+import '../el-array-base/style'

@@ -1,4 +1,4 @@
 import './style.scss'
 
 // 依赖
-import '../array-base/style'
+import '../el-array-base/style'

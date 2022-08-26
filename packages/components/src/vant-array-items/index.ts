@@ -3,7 +3,7 @@ import { ArrayField } from '@formily/core'
 import { useField, useFieldSchema, RecursionField } from '@formily/vue'
 import { observer } from '@formily/reactive-vue'
 import { ISchema } from '@formily/json-schema'
-import { ArrayBase } from '../array-base'
+import { ArrayBase } from '../el-array-base'
 import { stylePrefix } from '../__builtins__/configs'
 import { composeExport } from '../__builtins__/shared'
 const isAdditionComponent = (schema: ISchema) => {

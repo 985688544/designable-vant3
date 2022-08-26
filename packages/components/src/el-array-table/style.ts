@@ -7,5 +7,5 @@ import 'element-plus/theme-chalk/src/select.scss'
 import 'element-plus/theme-chalk/src/badge.scss'
 
 // 依赖
-import '../array-base/style'
-import '../space/style'
+import '../el-array-base/style'
+import '../el-space/style'

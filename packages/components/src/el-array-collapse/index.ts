@@ -13,7 +13,7 @@ import { observer } from '@formily/reactive-vue'
 import { ISchema } from '@formily/json-schema'
 
 import { stylePrefix } from '../__builtins__/configs'
-import { ArrayBase } from '../array-base'
+import { ArrayBase } from '../el-array-base'
 import { composeExport } from '../__builtins__/shared'
 
 type ElCollapseProps = typeof ElCollapse

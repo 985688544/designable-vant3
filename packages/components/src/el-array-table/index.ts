@@ -25,8 +25,8 @@ import {
   ElBadge,
 } from 'element-plus'
 
-import { Space } from '../space'
-import { ArrayBase } from '../array-base'
+import { Space } from '../el-space'
+import { ArrayBase } from '../el-array-base'
 import { stylePrefix } from '../__builtins__/configs'
 import { composeExport } from '../__builtins__/shared'
 

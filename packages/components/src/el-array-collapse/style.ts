@@ -7,4 +7,4 @@ import 'element-plus/theme-chalk/src/card.scss'
 import 'element-plus/theme-chalk/src/badge.scss'
 
 // 依赖
-import '../array-base/style'
+import '../el-array-base/style'

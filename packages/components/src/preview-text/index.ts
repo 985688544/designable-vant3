@@ -10,13 +10,13 @@ import { observer } from '@formily/reactive-vue'
 import { useField } from '@formily/vue'
 import { isArr, isValid } from '@formily/shared'
 import { stylePrefix } from '../__builtins__/configs'
-import type { SelectProps } from '../select'
-import type { CascaderProps } from '../cascader'
-import type { DatePickerProps } from '../date-picker'
-import type { TimePickerProps } from '../time-picker'
+import type { SelectProps } from '../el-select'
+import type { CascaderProps } from '../el-cascader'
+import type { DatePickerProps } from '../el-date-picker'
+import type { TimePickerProps } from '../el-time-picker'
 
 
-import { Space } from '../space'
+import { Space } from '../el-space'
 import { ElTag } from 'element-plus'
 
 const prefixCls = `${stylePrefix}-preview-text`

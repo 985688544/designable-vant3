@@ -1,6 +1,6 @@
 import { h } from '@formily/vue'
 import { defineComponent } from 'vue'
-import { Space, SpaceProps } from '../space'
+import { Space, SpaceProps } from '../el-space'
 import { FormBaseItem } from '../form-item'
 import { stylePrefix } from '../__builtins__'
 

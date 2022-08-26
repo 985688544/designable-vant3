@@ -6,7 +6,7 @@ import { ISchema } from '@formily/json-schema'
 import Draggable from 'vuedraggable'
 
 import { stylePrefix } from '../__builtins__/configs'
-import { ArrayBase } from '../array-base'
+import { ArrayBase } from '../el-array-base'
 import { composeExport } from '../__builtins__/shared'
 
 const isAdditionComponent = (schema: ISchema) => {
