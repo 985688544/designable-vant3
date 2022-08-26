@@ -96,6 +96,99 @@ const BasePicker = observer(
     },
   })
 )
+// const BasePicker = observer(
+//   defineComponent({
+//     name: 'FBasePicker',
+//     props: {
+//       formItemProps:{},
+//       popupProps:{},
+//       pickerProps: {},
+//       popupListeners: {},
+//       pickerListeners: {}
+//     } = attrs ad any,
+//     setup(props, { attrs, emit, slots }) {
+//       const {
+//         formItemProps,
+//         popupProps,
+//         pickerProps,
+//         popupListeners,
+//         pickerListeners,
+//       } = props as any
+
+//       const show = ref(false)  
+//       return () => {
+//         return h(
+//           'div',
+//           {},
+//           {
+//             default: () => [
+//               h(
+//                 VantFormItem,
+//                 {
+//                   label: attrs.label,
+//                   class: [`${vantStylePrefix}-Picker`],
+//                   attrs: {
+//                     modelValue: attrs.value,    
+//                     placeholder: attrs.placeholder || '',
+//                     ...formItemProps,   
+//                   },
+//                   on: {
+//                     click: () => {
+//                         show.value = true  
+//                     },
+//                   },
+//                 },
+//                 slots
+//               ),
+//               h(
+//                 VanPopup,
+//                 {
+//                   attrs: {
+//                     show: show.value,
+//                     round: true,
+//                     teleport:'body',
+//                     position: 'bottom',
+//                     ...popupProps,
+//                   },
+//                   on: {
+//                     input: (val: any) => {
+//                       show.value = val
+//                     },
+//                     ...popupListeners,
+//                   },
+//                 },
+//                 {
+//                   default: () => [
+//                     h(
+//                       VanPicker,
+//                       {
+//                         attrs: {
+//                           showToolbar: true,
+//                           ...pickerProps,
+//                         },
+//                         on: {
+//                           cancel: () => {
+//                             show.value = false
+//                           },
+//                           confirm: (val: string) => {
+//                             emit('change', val)
+//                             show.value = false
+//                           },
+//                           ...pickerListeners,
+//                         },
+//                       },
+//                       {}
+//                     ),
+//                   ],
+//                 }
+//               ),
+//             ],
+//           }
+//         )
+//       }
+//     },
+//   })
+// )
 
 export const VantPicker = connect(
   BasePicker,

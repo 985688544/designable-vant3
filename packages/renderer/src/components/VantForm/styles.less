@@ -1,16 +1,27 @@
 @import '../../styles.less';
 
 .dn-designable-form {
-  .@{formily-vant}-Calendar,
-  .@{formily-vant}-Checkbox,
-  .@{formily-vant}-Picker,
-  .@{formily-vant}-Datetime-picker,
-  .@{formily-vant}-Cascader
+  // .@{formily-vant}-Calendar,
+  .@{vant-prefix}-Calendar,
+  .@{vant-prefix}-Checkbox,
+  .@{vant-prefix}-picker,
+  .@{vant-prefix}-Datetime-picker,
+  .@{vant-prefix}-Cascader,
+  .@{vant-prefix}-Radio,
+  .@{vant-prefix}-space,
+  .@{vant-prefix}-switch,
+  .@{vant-prefix}-rate,
+  .@{vant-prefix}-slider,
+  .@{vant-prefix}-stepper
   {
     pointer-events: none !important;
 
+    input {
+      pointer-events: none !important;
+    }
+
   }
-  .@{formily-vant}-input {
+  .@{vant-prefix}-input {
     input {
       pointer-events: none !important;
     }
@@ -47,4 +58,7 @@
   .elementicon svg {
     pointer-events: none;
   }
+}
+.van-cell{
+  align-items: center !important;
 }

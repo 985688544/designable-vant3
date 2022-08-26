@@ -20,7 +20,7 @@ export const VantInput: ISchema & { TextArea?: ISchema } = {
       default: 'please input',
       'x-component-props': {
         clearable: true,
-        placeholder: '请输入'
+        placeholder: '请输入',
       },
     },
   //   required: {

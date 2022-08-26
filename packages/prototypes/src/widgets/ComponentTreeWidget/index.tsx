@@ -85,7 +85,16 @@ export const TreeNodeWidgetComponent = defineComponent({
           if (designerRef.value) {
             dataId[designerRef.value?.props?.nodeIdAttrName] = node.id
           }
+
           const { style, ...attrs } = renderProps(dataId)
+          // eslint-disable-next-line no-console
+          // console.log(
+          //   'componentName',
+          //   componentName,
+          //   'attrs.title',
+          //   attrs.title
+          // )
+
           return (
             <Component
               {...attrs}

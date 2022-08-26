@@ -1,15 +1,15 @@
 import { transformComponent } from '../__builtins__/shared'
 import { connect, mapProps, mapReadPretty } from '@formily/vue'
 import { Slider as VanSlider } from 'vant'
-import { PreviewText } from '../preview-text'
+import { VantPreviewText } from '../vant-preview-text'
 
 const TransformVanSlider = transformComponent(VanSlider, {
   change: 'modelValue',
 })
 
-export const Slider = connect(
+export const VantSlider = connect(
   TransformVanSlider,
   mapProps({ readOnly: 'readonly', value: 'modelValue' }),
-  mapReadPretty(PreviewText.Slider)
+  mapReadPretty(VantPreviewText.Slider)
 )
-export default Slider
+export default VantSlider
